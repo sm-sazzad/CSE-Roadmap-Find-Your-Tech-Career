@@ -1,0 +1,124 @@
+{
+  "sectors": [
+    {
+      "slug": "web-development",
+      "name": "Web Development",
+      "description": "Learn how to build modern websites and web applications.",
+      "icon": "🌐"
+    },
+    {
+      "slug": "software-engineering",
+      "name": "Software Engineering",
+      "description": "Learn software development principles, architecture, testing, and engineering practices.",
+      "icon": "💻"
+    },
+    {
+      "slug": "app-development",
+      "name": "App Development",
+      "description": "Learn how to build mobile applications for Android and iOS platforms.",
+      "icon": "📱"
+    },
+    {
+      "slug": "ai-ml",
+      "name": "AI & Machine Learning",
+      "description": "Learn artificial intelligence, machine learning, and intelligent systems.",
+      "icon": "🤖"
+    },
+    {
+      "slug": "data-science",
+      "name": "Data Science",
+      "description": "Learn data analysis, statistics, visualization, and data-driven decision making.",
+      "icon": "📊"
+    },
+    {
+      "slug": "cyber-security",
+      "name": "Cyber Security",
+      "description": "Learn how to protect systems, networks, applications, and data from cyber threats.",
+      "icon": "🔐"
+    },
+    {
+      "slug": "cloud-computing",
+      "name": "Cloud Computing",
+      "description": "Learn cloud platforms, infrastructure, deployment, scalability, and cloud architecture.",
+      "icon": "☁️"
+    },
+    {
+      "slug": "devops",
+      "name": "DevOps",
+      "description": "Learn automation, CI/CD, deployment, infrastructure, monitoring, and system operations.",
+      "icon": "⚙️"
+    },
+    {
+      "slug": "database-engineering",
+      "name": "Database Engineering",
+      "description": "Learn database design, SQL, NoSQL, optimization, administration, and data management.",
+      "icon": "🗄️"
+    },
+    {
+      "slug": "computer-networking",
+      "name": "Computer Networking",
+      "description": "Learn networking fundamentals, protocols, network design, security, and administration.",
+      "icon": "🌍"
+    },
+    {
+      "slug": "game-development",
+      "name": "Game Development",
+      "description": "Learn game programming, game engines, graphics, physics, and game design.",
+      "icon": "🎮"
+    },
+    {
+      "slug": "embedded-systems",
+      "name": "Embedded Systems",
+      "description": "Learn how to develop software for microcontrollers, electronic devices, and embedded hardware.",
+      "icon": "🔧"
+    },
+    {
+      "slug": "robotics",
+      "name": "Robotics",
+      "description": "Learn programming, electronics, control systems, sensors, and robot development.",
+      "icon": "🦾"
+    },
+    {
+      "slug": "blockchain-web3",
+      "name": "Blockchain & Web3",
+      "description": "Learn blockchain technology, smart contracts, decentralized applications, and Web3 development.",
+      "icon": "⛓️"
+    },
+    {
+      "slug": "ui-ux-design",
+      "name": "UI/UX Design",
+      "description": "Learn interface design, user experience, prototyping, usability, and design systems.",
+      "icon": "🎨"
+    },
+    {
+      "slug": "computer-graphics",
+      "name": "Computer Graphics",
+      "description": "Learn 2D and 3D graphics, rendering, visualization, and graphics programming.",
+      "icon": "🖼️"
+    },
+    {
+      "slug": "ar-vr",
+      "name": "AR & VR",
+      "description": "Learn augmented reality, virtual reality, 3D environments, and immersive application development.",
+      "icon": "🥽"
+    },
+    {
+      "slug": "natural-language-processing",
+      "name": "Natural Language Processing",
+      "description": "Learn how computers understand, process, and generate human language.",
+      "icon": "💬"
+    },
+    {
+      "slug": "computer-vision",
+      "name": "Computer Vision",
+      "description": "Learn how computers process and understand images, videos, and visual information.",
+      "icon": "👁️"
+    },
+    {
+      "slug": "system-administration",
+      "name": "System Administration",
+      "description": "Learn Linux, servers, system configuration, monitoring, networking, and infrastructure management.",
+      "icon": "🖥️"
+    }
+  ]
+}

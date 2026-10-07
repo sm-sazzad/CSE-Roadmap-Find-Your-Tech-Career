@@ -1,0 +1,3174 @@
+{
+  "project": {
+    "name": "CSE Roadmap",
+    "version": "1.1",
+    "description": "A self-contained roadmap dataset for 20 major CSE career sectors.",
+    "schema": {
+      "sector": "slug, name, overview, prerequisites, skills, tools, career_roles, steps, resources, final_project",
+      "step": "title, level, topics, learning_outcome, projects",
+      "resource": {
+        "name": "string",
+        "type": "Documentation | Tutorial | Course | Practice | Video | Book",
+        "url": "string"
+      }
+    }
+  },
+  "sectors": [
+    {
+      "slug": "web-development",
+      "name": "Web Development",
+      "icon": "🌐",
+      "difficulty": "Beginner → Advanced",
+      "estimated_time": "6–12 months",
+      "overview": "Learn to build accessible, responsive, interactive, full-stack web applications.",
+      "prerequisites": [
+        "Basic computer usage",
+        "Basic problem solving"
+      ],
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Git",
+        "Frontend",
+        "Backend",
+        "Databases",
+        "APIs",
+        "Deployment"
+      ],
+      "tools": [
+        "VS Code",
+        "Git",
+        "GitHub",
+        "Chrome DevTools",
+        "Node.js"
+      ],
+      "career_roles": [
+        "Frontend Developer",
+        "Backend Developer",
+        "Full Stack Developer",
+        "Web Developer"
+      ],
+      "steps": [
+        {
+          "title": "Internet & Web Fundamentals",
+          "level": "Beginner",
+          "topics": [
+            "How the web works",
+            "Client vs server",
+            "HTTP/HTTPS",
+            "DNS",
+            "URLs",
+            "Browsers",
+            "Hosting basics"
+          ],
+          "learning_outcome": "Understand how a browser communicates with servers and how websites are delivered.",
+          "projects": [
+            "Explain a URL request flow",
+            "Build a simple static page"
+          ]
+        },
+        {
+          "title": "HTML",
+          "level": "Beginner",
+          "topics": [
+            "Document structure",
+            "Semantic HTML",
+            "Links and images",
+            "Forms",
+            "Tables",
+            "Accessibility basics",
+            "SEO metadata"
+          ],
+          "learning_outcome": "Create well-structured accessible web pages.",
+          "projects": [
+            "Personal profile page",
+            "Registration form",
+            "Semantic blog page"
+          ]
+        },
+        {
+          "title": "CSS",
+          "level": "Beginner",
+          "topics": [
+            "Selectors",
+            "Box model",
+            "Cascade",
+            "Flexbox",
+            "Grid",
+            "Positioning",
+            "Responsive design",
+            "Animations"
+          ],
+          "learning_outcome": "Create responsive layouts that work across screen sizes.",
+          "projects": [
+            "Responsive landing page",
+            "Portfolio website"
+          ]
+        },
+        {
+          "title": "JavaScript",
+          "level": "Intermediate",
+          "topics": [
+            "Variables and types",
+            "Conditions and loops",
+            "Functions",
+            "Arrays and objects",
+            "DOM",
+            "Events",
+            "Modules",
+            "Fetch API",
+            "Promises and async/await"
+          ],
+          "learning_outcome": "Build interactive browser applications and consume APIs.",
+          "projects": [
+            "Calculator",
+            "Todo app",
+            "Weather app"
+          ]
+        },
+        {
+          "title": "Frontend & Backend",
+          "level": "Intermediate",
+          "topics": [
+            "React or another frontend framework",
+            "Components and state",
+            "Routing",
+            "Node.js",
+            "Express",
+            "REST APIs",
+            "Authentication",
+            "Validation"
+          ],
+          "learning_outcome": "Build a complete client-server application.",
+          "projects": [
+            "Task manager",
+            "Blog API + frontend",
+            "Authentication system"
+          ]
+        },
+        {
+          "title": "Database & Deployment",
+          "level": "Advanced",
+          "topics": [
+            "SQL basics",
+            "PostgreSQL/MySQL",
+            "MongoDB concepts",
+            "Environment variables",
+            "Testing",
+            "Docker basics",
+            "Deployment",
+            "Monitoring"
+          ],
+          "learning_outcome": "Deploy a production-style full-stack application.",
+          "projects": [
+            "E-commerce application",
+            "Learning management system"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "MDN Learn Web Development",
+          "type": "Course",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development"
+        },
+        {
+          "name": "JavaScript.info",
+          "type": "Tutorial",
+          "url": "https://javascript.info/"
+        },
+        {
+          "name": "freeCodeCamp",
+          "type": "Course",
+          "url": "https://www.freecodecamp.org/"
+        },
+        {
+          "name": "roadmap.sh Web/Frontend/Backend roadmaps",
+          "type": "Tutorial",
+          "url": ""
+        }
+      ],
+      "final_project": "Build a full-stack CSE learning platform with authentication, search, progress tracking, database, admin panel and deployment."
+    },
+    {
+      "slug": "software-engineering",
+      "name": "Software Engineering",
+      "icon": "💻",
+      "difficulty": "Beginner → Advanced",
+      "estimated_time": "8–14 months",
+      "overview": "Learn the engineering process for designing, building, testing, deploying and maintaining reliable software.",
+      "prerequisites": [
+        "One programming language",
+        "Basic data structures"
+      ],
+      "skills": [
+        "Programming",
+        "DSA",
+        "OOP",
+        "Git",
+        "Testing",
+        "Design",
+        "System Design",
+        "Agile"
+      ],
+      "tools": [
+        "Git",
+        "GitHub",
+        "VS Code",
+        "Docker",
+        "CI/CD"
+      ],
+      "career_roles": [
+        "Software Engineer",
+        "Backend Engineer",
+        "Application Developer",
+        "Software Architect"
+      ],
+      "steps": [
+        {
+          "title": "Programming Foundations",
+          "level": "Beginner",
+          "topics": [
+            "Choose C++/Java/Python/JavaScript",
+            "Variables",
+            "Functions",
+            "Collections",
+            "Error handling",
+            "File I/O"
+          ],
+          "learning_outcome": "Write readable programs and solve small problems.",
+          "projects": [
+            "CLI expense tracker",
+            "File-based student manager"
+          ]
+        },
+        {
+          "title": "DSA",
+          "level": "Beginner",
+          "topics": [
+            "Arrays",
+            "Linked lists",
+            "Stacks",
+            "Queues",
+            "Hash tables",
+            "Trees",
+            "Graphs",
+            "Sorting",
+            "Searching",
+            "Big-O"
+          ],
+          "learning_outcome": "Choose suitable data structures and reason about algorithm complexity.",
+          "projects": [
+            "Implement a DSA library",
+            "Solve 100 graded problems"
+          ]
+        },
+        {
+          "title": "OOP & Clean Code",
+          "level": "Intermediate",
+          "topics": [
+            "Classes",
+            "Inheritance",
+            "Composition",
+            "Interfaces",
+            "SOLID",
+            "DRY",
+            "Refactoring",
+            "Code smells"
+          ],
+          "learning_outcome": "Design maintainable object-oriented and modular code.",
+          "projects": [
+            "Library management system",
+            "Refactor a messy codebase"
+          ]
+        },
+        {
+          "title": "Software Development Process",
+          "level": "Intermediate",
+          "topics": [
+            "Requirements",
+            "User stories",
+            "Git branching",
+            "Code review",
+            "Agile/Scrum",
+            "Issue tracking",
+            "Documentation"
+          ],
+          "learning_outcome": "Work effectively on software as part of a team.",
+          "projects": [
+            "Team project with pull requests",
+            "Mini sprint project"
+          ]
+        },
+        {
+          "title": "Testing & Architecture",
+          "level": "Advanced",
+          "topics": [
+            "Unit tests",
+            "Integration tests",
+            "Mocks",
+            "CI",
+            "Design patterns",
+            "Layered architecture",
+            "REST",
+            "Security basics"
+          ],
+          "learning_outcome": "Build software that can be tested and evolved safely.",
+          "projects": [
+            "Tested REST API",
+            "Layered business application"
+          ]
+        },
+        {
+          "title": "System Design",
+          "level": "Advanced",
+          "topics": [
+            "Scalability",
+            "Caching",
+            "Queues",
+            "Load balancing",
+            "Databases",
+            "Consistency",
+            "Observability",
+            "Failure handling"
+          ],
+          "learning_outcome": "Design systems from requirements to deployable architecture.",
+          "projects": [
+            "Design a URL shortener",
+            "Design a chat system"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "roadmap.sh Software Architect/Computer Science roadmaps",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "Git documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "Refactoring Guru",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "MDN/official language documentation",
+          "type": "Documentation",
+          "url": ""
+        }
+      ],
+      "final_project": "Design and implement a production-style multi-user application with tests, CI, documentation, monitoring and a system-design document."
+    },
+    {
+      "slug": "app-development",
+      "name": "App Development",
+      "icon": "📱",
+      "difficulty": "Beginner → Advanced",
+      "estimated_time": "6–12 months",
+      "overview": "Learn to design, build, test and publish mobile applications.",
+      "prerequisites": [
+        "Programming fundamentals",
+        "Basic UI concepts"
+      ],
+      "skills": [
+        "Mobile UI",
+        "State management",
+        "APIs",
+        "Storage",
+        "Authentication",
+        "Testing",
+        "Publishing"
+      ],
+      "tools": [
+        "Android Studio",
+        "Xcode",
+        "Flutter or React Native",
+        "Git"
+      ],
+      "career_roles": [
+        "Android Developer",
+        "iOS Developer",
+        "Flutter Developer",
+        "React Native Developer"
+      ],
+      "steps": [
+        {
+          "title": "Programming & Mobile Concepts",
+          "level": "Beginner",
+          "topics": [
+            "Dart/Kotlin/Swift/JavaScript",
+            "Variables",
+            "Functions",
+            "OOP",
+            "Async programming",
+            "Mobile lifecycle"
+          ],
+          "learning_outcome": "Understand the language and constraints of mobile development.",
+          "projects": [
+            "CLI notes app"
+          ]
+        },
+        {
+          "title": "UI Development",
+          "level": "Beginner",
+          "topics": [
+            "Layouts",
+            "Widgets/components",
+            "Navigation",
+            "Forms",
+            "Lists",
+            "Responsive screens",
+            "Accessibility"
+          ],
+          "learning_outcome": "Build clean multi-screen mobile interfaces.",
+          "projects": [
+            "Calculator",
+            "Notes app",
+            "Profile app"
+          ]
+        },
+        {
+          "title": "State & Local Storage",
+          "level": "Intermediate",
+          "topics": [
+            "State management",
+            "Preferences",
+            "SQLite",
+            "Local databases",
+            "Offline-first basics"
+          ],
+          "learning_outcome": "Create apps that preserve and manage local data.",
+          "projects": [
+            "Offline expense tracker",
+            "Habit tracker"
+          ]
+        },
+        {
+          "title": "APIs & Authentication",
+          "level": "Intermediate",
+          "topics": [
+            "HTTP",
+            "REST",
+            "JSON",
+            "Authentication",
+            "Tokens",
+            "Error states",
+            "File upload"
+          ],
+          "learning_outcome": "Connect apps securely to backend services.",
+          "projects": [
+            "News app",
+            "Login/register app",
+            "Chat client"
+          ]
+        },
+        {
+          "title": "Advanced Mobile",
+          "level": "Advanced",
+          "topics": [
+            "Notifications",
+            "Background tasks",
+            "Device APIs",
+            "Maps",
+            "Camera",
+            "Performance",
+            "Crash handling"
+          ],
+          "learning_outcome": "Use real device capabilities and optimize applications.",
+          "projects": [
+            "Delivery tracking app",
+            "Fitness tracker"
+          ]
+        },
+        {
+          "title": "Testing & Publishing",
+          "level": "Advanced",
+          "topics": [
+            "Unit tests",
+            "UI tests",
+            "Release builds",
+            "Signing",
+            "Store requirements",
+            "Analytics",
+            "Privacy"
+          ],
+          "learning_outcome": "Prepare a mobile app for real users.",
+          "projects": [
+            "Publish a complete app prototype"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Android Developers",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "Apple Developer Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "Flutter Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "React Native Documentation",
+          "type": "Documentation",
+          "url": ""
+        }
+      ],
+      "final_project": "Build a complete mobile app with authentication, API integration, local caching, notifications and a release build."
+    },
+    {
+      "slug": "ai-ml",
+      "name": "AI & Machine Learning",
+      "icon": "🤖",
+      "difficulty": "Intermediate → Advanced",
+      "estimated_time": "9–18 months",
+      "overview": "Learn the mathematical, programming and practical foundations required to build and deploy machine-learning systems.",
+      "prerequisites": [
+        "Python basics",
+        "Basic algebra",
+        "Comfort with graphs and formulas"
+      ],
+      "skills": [
+        "Python",
+        "Statistics",
+        "Linear Algebra",
+        "Data Processing",
+        "ML",
+        "Deep Learning",
+        "Evaluation",
+        "Deployment"
+      ],
+      "tools": [
+        "Python",
+        "NumPy",
+        "Pandas",
+        "Matplotlib",
+        "scikit-learn",
+        "PyTorch"
+      ],
+      "career_roles": [
+        "ML Engineer",
+        "AI Engineer",
+        "Data Scientist",
+        "Applied Scientist"
+      ],
+      "steps": [
+        {
+          "title": "Python & Data Foundations",
+          "level": "Beginner",
+          "topics": [
+            "Python syntax",
+            "Functions",
+            "OOP",
+            "NumPy",
+            "Pandas",
+            "Matplotlib",
+            "Jupyter"
+          ],
+          "learning_outcome": "Manipulate datasets and write reusable Python programs.",
+          "projects": [
+            "Data cleaning notebook",
+            "CSV analysis tool"
+          ]
+        },
+        {
+          "title": "Mathematics & Statistics",
+          "level": "Intermediate",
+          "topics": [
+            "Probability",
+            "Distributions",
+            "Mean/variance",
+            "Hypothesis testing",
+            "Vectors",
+            "Matrices",
+            "Derivatives"
+          ],
+          "learning_outcome": "Understand the math behind common ML algorithms.",
+          "projects": [
+            "Statistical analysis report"
+          ]
+        },
+        {
+          "title": "Machine Learning Fundamentals",
+          "level": "Intermediate",
+          "topics": [
+            "Supervised learning",
+            "Unsupervised learning",
+            "Regression",
+            "Classification",
+            "Clustering",
+            "Feature engineering",
+            "Train/validation/test"
+          ],
+          "learning_outcome": "Train, compare and evaluate classical ML models.",
+          "projects": [
+            "House price predictor",
+            "Spam classifier",
+            "Customer segmentation"
+          ]
+        },
+        {
+          "title": "Model Evaluation",
+          "level": "Intermediate",
+          "topics": [
+            "Accuracy",
+            "Precision/recall",
+            "F1",
+            "ROC-AUC",
+            "Cross-validation",
+            "Overfitting",
+            "Regularization",
+            "Hyperparameter tuning"
+          ],
+          "learning_outcome": "Select models based on meaningful evaluation rather than a single score.",
+          "projects": [
+            "Model comparison dashboard"
+          ]
+        },
+        {
+          "title": "Deep Learning",
+          "level": "Advanced",
+          "topics": [
+            "Neural networks",
+            "Backpropagation",
+            "CNN",
+            "RNN concepts",
+            "Transformers",
+            "Embeddings",
+            "Transfer learning"
+          ],
+          "learning_outcome": "Build neural-network solutions for practical problems.",
+          "projects": [
+            "Image classifier",
+            "Text classifier"
+          ]
+        },
+        {
+          "title": "ML Engineering",
+          "level": "Advanced",
+          "topics": [
+            "Model serialization",
+            "APIs",
+            "Docker",
+            "Experiment tracking",
+            "Data pipelines",
+            "Monitoring",
+            "Model drift"
+          ],
+          "learning_outcome": "Turn a trained model into a usable service.",
+          "projects": [
+            "Deploy an ML prediction API"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "scikit-learn User Guide",
+          "type": "Course",
+          "url": ""
+        },
+        {
+          "name": "PyTorch Tutorials",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "Kaggle Learn",
+          "type": "Practice",
+          "url": ""
+        },
+        {
+          "name": "roadmap.sh Machine Learning/AI Engineer roadmaps",
+          "type": "Course",
+          "url": ""
+        }
+      ],
+      "final_project": "Build an end-to-end ML system: dataset → preprocessing → training → evaluation → API → simple UI → deployment."
+    },
+    {
+      "slug": "data-science",
+      "name": "Data Science",
+      "icon": "📊",
+      "difficulty": "Beginner → Advanced",
+      "estimated_time": "6–12 months",
+      "overview": "Learn to collect, clean, analyze, visualize and model data to answer real-world questions.",
+      "prerequisites": [
+        "Basic Python",
+        "Basic mathematics"
+      ],
+      "skills": [
+        "Python",
+        "SQL",
+        "Statistics",
+        "EDA",
+        "Visualization",
+        "ML",
+        "Communication"
+      ],
+      "tools": [
+        "Python",
+        "Jupyter",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "SQL"
+      ],
+      "career_roles": [
+        "Data Scientist",
+        "Data Analyst",
+        "BI Analyst",
+        "Analytics Engineer"
+      ],
+      "steps": [
+        {
+          "title": "Python for Data",
+          "level": "Beginner",
+          "topics": [
+            "Python",
+            "NumPy",
+            "Pandas",
+            "Jupyter",
+            "Data types",
+            "Functions"
+          ],
+          "learning_outcome": "Load, transform and inspect datasets.",
+          "projects": [
+            "CSV data explorer"
+          ]
+        },
+        {
+          "title": "SQL",
+          "level": "Beginner",
+          "topics": [
+            "SELECT",
+            "WHERE",
+            "GROUP BY",
+            "JOIN",
+            "Subqueries",
+            "CTEs",
+            "Window functions"
+          ],
+          "learning_outcome": "Query relational data confidently.",
+          "projects": [
+            "Student analytics database"
+          ]
+        },
+        {
+          "title": "Statistics",
+          "level": "Intermediate",
+          "topics": [
+            "Descriptive statistics",
+            "Probability",
+            "Sampling",
+            "Distributions",
+            "Confidence intervals",
+            "Hypothesis tests"
+          ],
+          "learning_outcome": "Use statistics to reason about data and uncertainty.",
+          "projects": [
+            "A/B test analysis"
+          ]
+        },
+        {
+          "title": "EDA & Visualization",
+          "level": "Intermediate",
+          "topics": [
+            "Missing values",
+            "Outliers",
+            "Feature relationships",
+            "Charts",
+            "Dashboards",
+            "Storytelling"
+          ],
+          "learning_outcome": "Turn raw data into understandable insights.",
+          "projects": [
+            "Sales dashboard",
+            "COVID-style public dataset analysis"
+          ]
+        },
+        {
+          "title": "Machine Learning",
+          "level": "Advanced",
+          "topics": [
+            "Regression",
+            "Classification",
+            "Clustering",
+            "Feature engineering",
+            "Evaluation",
+            "Model interpretation"
+          ],
+          "learning_outcome": "Build predictive models when analysis requires them.",
+          "projects": [
+            "Customer churn model"
+          ]
+        },
+        {
+          "title": "Portfolio & Communication",
+          "level": "Advanced",
+          "topics": [
+            "Business questions",
+            "Data reports",
+            "Reproducibility",
+            "Presentations",
+            "Ethics",
+            "Privacy"
+          ],
+          "learning_outcome": "Communicate findings to technical and non-technical audiences.",
+          "projects": [
+            "End-to-end business analytics project"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Kaggle Learn",
+          "type": "Practice",
+          "url": ""
+        },
+        {
+          "name": "Python documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "pandas documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "scikit-learn User Guide",
+          "type": "Course",
+          "url": ""
+        }
+      ],
+      "final_project": "Analyze a real public dataset, build an interactive dashboard, write a data story and optionally create a predictive model."
+    },
+    {
+      "slug": "cyber-security",
+      "name": "Cyber Security",
+      "icon": "🔐",
+      "difficulty": "Beginner → Advanced",
+      "estimated_time": "9–18 months",
+      "overview": "Learn defensive security, networking, operating systems, application security, incident response and ethical testing.",
+      "prerequisites": [
+        "Networking basics",
+        "Linux basics",
+        "Basic programming"
+      ],
+      "skills": [
+        "Networking",
+        "Linux",
+        "Security Fundamentals",
+        "Web Security",
+        "Cryptography",
+        "SOC",
+        "Pentesting"
+      ],
+      "tools": [
+        "Linux",
+        "Wireshark",
+        "Burp Suite",
+        "Nmap",
+        "Git",
+        "Docker"
+      ],
+      "career_roles": [
+        "SOC Analyst",
+        "Security Engineer",
+        "Penetration Tester",
+        "Application Security Engineer"
+      ],
+      "steps": [
+        {
+          "title": "Computing & Networking",
+          "level": "Beginner",
+          "topics": [
+            "OSI/TCP-IP",
+            "IP addressing",
+            "DNS",
+            "DHCP",
+            "Routing",
+            "Ports",
+            "Firewalls"
+          ],
+          "learning_outcome": "Understand how systems communicate and where attacks can occur.",
+          "projects": [
+            "Build a small network lab",
+            "Packet analysis report"
+          ]
+        },
+        {
+          "title": "Linux & Scripting",
+          "level": "Beginner",
+          "topics": [
+            "Linux filesystem",
+            "Permissions",
+            "Processes",
+            "Shell",
+            "Python scripting",
+            "Logs"
+          ],
+          "learning_outcome": "Operate and automate security tasks on Linux.",
+          "projects": [
+            "Log parser",
+            "Linux hardening checklist"
+          ]
+        },
+        {
+          "title": "Security Fundamentals",
+          "level": "Intermediate",
+          "topics": [
+            "CIA triad",
+            "Threats",
+            "Vulnerabilities",
+            "Authentication",
+            "Authorization",
+            "Cryptography basics",
+            "Risk"
+          ],
+          "learning_outcome": "Assess security problems using correct terminology and models.",
+          "projects": [
+            "Threat model for a web app"
+          ]
+        },
+        {
+          "title": "Web & Application Security",
+          "level": "Intermediate",
+          "topics": [
+            "OWASP risks",
+            "Input validation",
+            "Sessions",
+            "Access control",
+            "Secure APIs",
+            "Secrets",
+            "Secure coding"
+          ],
+          "learning_outcome": "Identify and prevent common application vulnerabilities.",
+          "projects": [
+            "Secure demo web app",
+            "Security review report"
+          ]
+        },
+        {
+          "title": "Defensive Security",
+          "level": "Advanced",
+          "topics": [
+            "SIEM concepts",
+            "Monitoring",
+            "Detection rules",
+            "Incident response",
+            "Digital forensics basics",
+            "Backups"
+          ],
+          "learning_outcome": "Detect, investigate and respond to security incidents.",
+          "projects": [
+            "Mini SOC lab",
+            "Incident response playbook"
+          ]
+        },
+        {
+          "title": "Ethical Testing",
+          "level": "Advanced",
+          "topics": [
+            "Reconnaissance",
+            "Scanning",
+            "Vulnerability assessment",
+            "Web testing",
+            "Reporting",
+            "Remediation"
+          ],
+          "learning_outcome": "Perform authorized security assessments and communicate findings responsibly.",
+          "projects": [
+            "CTF-style lab",
+            "Authorized pentest report"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "OWASP Web Security Academy",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "OWASP Top 10",
+          "type": "Tutorial",
+          "url": "https://owasp.org/www-project-top-ten/"
+        },
+        {
+          "name": "NIST Cybersecurity Framework",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "TryHackMe",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "PortSwigger Web Security Academy",
+          "type": "Tutorial",
+          "url": ""
+        }
+      ],
+      "final_project": "Create an isolated security lab, harden a deliberately vulnerable application, document findings and produce a professional remediation report."
+    },
+    {
+      "slug": "cloud-computing",
+      "name": "Cloud Computing",
+      "icon": "☁️",
+      "difficulty": "Intermediate → Advanced",
+      "estimated_time": "6–12 months",
+      "overview": "Learn cloud architecture, compute, storage, networking, security, automation and scalable deployment.",
+      "prerequisites": [
+        "Linux basics",
+        "Networking basics",
+        "Git"
+      ],
+      "skills": [
+        "Cloud Architecture",
+        "Linux",
+        "Networking",
+        "IAM",
+        "Storage",
+        "Containers",
+        "Infrastructure as Code"
+      ],
+      "tools": [
+        "AWS/Azure/GCP",
+        "Docker",
+        "Terraform",
+        "Git"
+      ],
+      "career_roles": [
+        "Cloud Engineer",
+        "Cloud Architect",
+        "Solutions Engineer",
+        "Platform Engineer"
+      ],
+      "steps": [
+        {
+          "title": "Cloud Fundamentals",
+          "level": "Beginner",
+          "topics": [
+            "IaaS/PaaS/SaaS",
+            "Regions/zones",
+            "Virtualization",
+            "Shared responsibility",
+            "Pricing concepts"
+          ],
+          "learning_outcome": "Understand what cloud services provide and when to use them.",
+          "projects": [
+            "Map a local app to cloud services"
+          ]
+        },
+        {
+          "title": "Linux & Networking",
+          "level": "Beginner",
+          "topics": [
+            "Processes",
+            "SSH",
+            "IP",
+            "DNS",
+            "HTTP",
+            "Subnets",
+            "Routing",
+            "Firewalls"
+          ],
+          "learning_outcome": "Configure and troubleshoot cloud-hosted systems.",
+          "projects": [
+            "Deploy a Linux server"
+          ]
+        },
+        {
+          "title": "Core Cloud Services",
+          "level": "Intermediate",
+          "topics": [
+            "Virtual machines",
+            "Object storage",
+            "Managed databases",
+            "Load balancers",
+            "DNS",
+            "IAM"
+          ],
+          "learning_outcome": "Build a small cloud architecture.",
+          "projects": [
+            "Host a web application"
+          ]
+        },
+        {
+          "title": "Containers",
+          "level": "Intermediate",
+          "topics": [
+            "Docker images",
+            "Containers",
+            "Volumes",
+            "Networks",
+            "Registries",
+            "Compose"
+          ],
+          "learning_outcome": "Package applications consistently.",
+          "projects": [
+            "Containerize a full-stack app"
+          ]
+        },
+        {
+          "title": "Infrastructure as Code",
+          "level": "Advanced",
+          "topics": [
+            "Terraform",
+            "State",
+            "Modules",
+            "Variables",
+            "Secrets",
+            "Plan/apply workflow"
+          ],
+          "learning_outcome": "Provision infrastructure repeatably.",
+          "projects": [
+            "Terraform-based environment"
+          ]
+        },
+        {
+          "title": "Reliability & Security",
+          "level": "Advanced",
+          "topics": [
+            "High availability",
+            "Backups",
+            "Monitoring",
+            "Logging",
+            "Least privilege",
+            "Cost optimization"
+          ],
+          "learning_outcome": "Design safer and more resilient cloud systems.",
+          "projects": [
+            "Highly available web architecture"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "AWS Skill Builder",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "Microsoft Learn",
+          "type": "Course",
+          "url": ""
+        },
+        {
+          "name": "Google Cloud Skills Boost",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "Terraform Documentation",
+          "type": "Documentation",
+          "url": ""
+        }
+      ],
+      "final_project": "Deploy a secure full-stack application using managed services, infrastructure as code, monitoring and backups."
+    },
+    {
+      "slug": "devops",
+      "name": "DevOps",
+      "icon": "⚙️",
+      "difficulty": "Intermediate → Advanced",
+      "estimated_time": "6–12 months",
+      "overview": "Learn the practices and tools used to build, test, deploy, observe and operate software reliably.",
+      "prerequisites": [
+        "Linux",
+        "Git",
+        "Basic backend development"
+      ],
+      "skills": [
+        "Linux",
+        "Git",
+        "CI/CD",
+        "Docker",
+        "Kubernetes",
+        "Cloud",
+        "IaC",
+        "Monitoring"
+      ],
+      "tools": [
+        "GitHub Actions/GitLab CI",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "Prometheus",
+        "Grafana"
+      ],
+      "career_roles": [
+        "DevOps Engineer",
+        "Platform Engineer",
+        "SRE",
+        "Release Engineer"
+      ],
+      "steps": [
+        {
+          "title": "Linux & Git",
+          "level": "Beginner",
+          "topics": [
+            "Shell",
+            "Processes",
+            "Permissions",
+            "SSH",
+            "Git",
+            "Branches",
+            "Pull requests"
+          ],
+          "learning_outcome": "Work with source code and Linux servers confidently.",
+          "projects": [
+            "Git workflow simulation",
+            "Server setup"
+          ]
+        },
+        {
+          "title": "CI/CD",
+          "level": "Intermediate",
+          "topics": [
+            "Build pipelines",
+            "Testing stages",
+            "Artifacts",
+            "Secrets",
+            "Deployment strategies"
+          ],
+          "learning_outcome": "Automate software delivery.",
+          "projects": [
+            "CI pipeline for a web app"
+          ]
+        },
+        {
+          "title": "Docker",
+          "level": "Intermediate",
+          "topics": [
+            "Images",
+            "Containers",
+            "Dockerfile",
+            "Volumes",
+            "Networks",
+            "Compose"
+          ],
+          "learning_outcome": "Package and run applications consistently.",
+          "projects": [
+            "Containerize an API + database"
+          ]
+        },
+        {
+          "title": "Cloud & Infrastructure",
+          "level": "Advanced",
+          "topics": [
+            "Cloud compute",
+            "Networking",
+            "IAM",
+            "Terraform",
+            "Configuration management"
+          ],
+          "learning_outcome": "Automate infrastructure and deployments.",
+          "projects": [
+            "Terraform environment"
+          ]
+        },
+        {
+          "title": "Kubernetes",
+          "level": "Advanced",
+          "topics": [
+            "Pods",
+            "Deployments",
+            "Services",
+            "ConfigMaps",
+            "Secrets",
+            "Ingress",
+            "Scaling"
+          ],
+          "learning_outcome": "Deploy and operate containerized applications.",
+          "projects": [
+            "Kubernetes deployment"
+          ]
+        },
+        {
+          "title": "Observability & SRE",
+          "level": "Advanced",
+          "topics": [
+            "Logs",
+            "Metrics",
+            "Traces",
+            "SLI/SLO",
+            "Alerts",
+            "Incident response",
+            "Backups"
+          ],
+          "learning_outcome": "Operate systems using measurable reliability goals.",
+          "projects": [
+            "Monitoring dashboard",
+            "Incident simulation"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Kubernetes Documentation",
+          "type": "Documentation",
+          "url": "https://kubernetes.io/docs/"
+        },
+        {
+          "name": "Docker Documentation",
+          "type": "Documentation",
+          "url": "https://docs.docker.com/"
+        },
+        {
+          "name": "Terraform Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "GitHub Actions Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "roadmap.sh DevOps roadmap",
+          "type": "Tutorial",
+          "url": ""
+        }
+      ],
+      "final_project": "Create a CI/CD pipeline that builds, tests, containerizes and deploys an application to Kubernetes with monitoring."
+    },
+    {
+      "slug": "database-engineering",
+      "name": "Database Engineering",
+      "icon": "🗄️",
+      "difficulty": "Beginner → Advanced",
+      "estimated_time": "5–10 months",
+      "overview": "Learn database design, querying, performance, reliability, security and administration.",
+      "prerequisites": [
+        "Basic programming",
+        "Basic data structures"
+      ],
+      "skills": [
+        "SQL",
+        "Data Modeling",
+        "Transactions",
+        "Indexing",
+        "NoSQL",
+        "Backup",
+        "Security"
+      ],
+      "tools": [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "Docker"
+      ],
+      "career_roles": [
+        "Database Engineer",
+        "Database Administrator",
+        "Data Engineer",
+        "Backend Engineer"
+      ],
+      "steps": [
+        {
+          "title": "Database Fundamentals",
+          "level": "Beginner",
+          "topics": [
+            "Tables",
+            "Rows",
+            "Keys",
+            "Relationships",
+            "Normalization",
+            "ER diagrams"
+          ],
+          "learning_outcome": "Design structured relational data models.",
+          "projects": [
+            "University database design"
+          ]
+        },
+        {
+          "title": "SQL",
+          "level": "Beginner",
+          "topics": [
+            "CRUD",
+            "Joins",
+            "Aggregations",
+            "Subqueries",
+            "CTEs",
+            "Views",
+            "Window functions"
+          ],
+          "learning_outcome": "Write complex and reliable queries.",
+          "projects": [
+            "Analytics query set"
+          ]
+        },
+        {
+          "title": "Transactions & Integrity",
+          "level": "Intermediate",
+          "topics": [
+            "ACID",
+            "Transactions",
+            "Isolation",
+            "Constraints",
+            "Locks",
+            "Concurrency"
+          ],
+          "learning_outcome": "Understand how databases preserve correctness.",
+          "projects": [
+            "Bank transfer simulation"
+          ]
+        },
+        {
+          "title": "Performance",
+          "level": "Intermediate",
+          "topics": [
+            "Indexes",
+            "Query plans",
+            "EXPLAIN",
+            "Partitioning",
+            "Connection pooling"
+          ],
+          "learning_outcome": "Diagnose and improve slow queries.",
+          "projects": [
+            "Optimize a slow dataset"
+          ]
+        },
+        {
+          "title": "NoSQL & Caching",
+          "level": "Advanced",
+          "topics": [
+            "Document databases",
+            "Key-value stores",
+            "Redis",
+            "Data modeling tradeoffs"
+          ],
+          "learning_outcome": "Choose between storage models based on application needs.",
+          "projects": [
+            "Hybrid SQL + Redis app"
+          ]
+        },
+        {
+          "title": "Operations & Security",
+          "level": "Advanced",
+          "topics": [
+            "Backups",
+            "Replication",
+            "Recovery",
+            "Monitoring",
+            "Access control",
+            "Encryption"
+          ],
+          "learning_outcome": "Operate a database safely in production.",
+          "projects": [
+            "Backup/recovery drill"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "PostgreSQL Documentation",
+          "type": "Documentation",
+          "url": "https://www.postgresql.org/docs/"
+        },
+        {
+          "name": "MySQL Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "MongoDB University",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "Redis Documentation",
+          "type": "Documentation",
+          "url": "https://redis.io/docs/latest/"
+        }
+      ],
+      "final_project": "Design and implement a production-style database for an e-commerce or learning platform with indexes, roles, backups and performance tests."
+    },
+    {
+      "slug": "computer-networking",
+      "name": "Computer Networking",
+      "icon": "🌍",
+      "difficulty": "Beginner → Advanced",
+      "estimated_time": "6–12 months",
+      "overview": "Learn how computers communicate, how networks are designed, and how to configure and troubleshoot them.",
+      "prerequisites": [
+        "Basic computer knowledge",
+        "Basic mathematics"
+      ],
+      "skills": [
+        "TCP/IP",
+        "Routing",
+        "Switching",
+        "DNS",
+        "Wireless",
+        "Network Security",
+        "Troubleshooting"
+      ],
+      "tools": [
+        "Cisco Packet Tracer",
+        "Wireshark",
+        "Linux",
+        "GNS3/EVE-NG"
+      ],
+      "career_roles": [
+        "Network Engineer",
+        "Network Administrator",
+        "NOC Engineer",
+        "Network Security Engineer"
+      ],
+      "steps": [
+        {
+          "title": "Networking Fundamentals",
+          "level": "Beginner",
+          "topics": [
+            "OSI model",
+            "TCP/IP",
+            "Ethernet",
+            "MAC/IP",
+            "Ports",
+            "Protocols"
+          ],
+          "learning_outcome": "Explain how data moves between hosts.",
+          "projects": [
+            "Draw a network architecture"
+          ]
+        },
+        {
+          "title": "IP Addressing",
+          "level": "Beginner",
+          "topics": [
+            "IPv4",
+            "IPv6",
+            "Subnetting",
+            "CIDR",
+            "Private/public IP",
+            "NAT"
+          ],
+          "learning_outcome": "Plan IP addressing and subnets.",
+          "projects": [
+            "Subnetting exercises",
+            "Small office IP plan"
+          ]
+        },
+        {
+          "title": "Switching",
+          "level": "Intermediate",
+          "topics": [
+            "Ethernet switching",
+            "VLANs",
+            "Trunks",
+            "STP",
+            "MAC tables"
+          ],
+          "learning_outcome": "Build segmented LANs.",
+          "projects": [
+            "Multi-VLAN Packet Tracer lab"
+          ]
+        },
+        {
+          "title": "Routing",
+          "level": "Intermediate",
+          "topics": [
+            "Static routing",
+            "Dynamic routing",
+            "OSPF concepts",
+            "Default routes",
+            "ACLs"
+          ],
+          "learning_outcome": "Connect multiple networks and control traffic.",
+          "projects": [
+            "Multi-router lab"
+          ]
+        },
+        {
+          "title": "Services & Wireless",
+          "level": "Advanced",
+          "topics": [
+            "DNS",
+            "DHCP",
+            "HTTP",
+            "VPN concepts",
+            "Wi-Fi",
+            "QoS"
+          ],
+          "learning_outcome": "Configure common network services.",
+          "projects": [
+            "Office network design"
+          ]
+        },
+        {
+          "title": "Security & Troubleshooting",
+          "level": "Advanced",
+          "topics": [
+            "Firewalls",
+            "IDS/IPS concepts",
+            "Packet capture",
+            "Logs",
+            "Fault isolation"
+          ],
+          "learning_outcome": "Diagnose network failures and security issues.",
+          "projects": [
+            "Troubleshooting lab"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Cisco Networking Academy",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "Cisco Packet Tracer",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "Wireshark Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "CompTIA Network+ objectives",
+          "type": "Tutorial",
+          "url": ""
+        }
+      ],
+      "final_project": "Design a complete small-business network with VLANs, routing, DHCP, DNS, ACLs and a troubleshooting report."
+    },
+    {
+      "slug": "game-development",
+      "name": "Game Development",
+      "icon": "🎮",
+      "difficulty": "Beginner → Advanced",
+      "estimated_time": "8–18 months",
+      "overview": "Learn game programming, game engines, graphics, physics, game architecture and production workflows.",
+      "prerequisites": [
+        "Programming fundamentals",
+        "Basic mathematics"
+      ],
+      "skills": [
+        "C#/C++",
+        "Game Engine",
+        "Gameplay",
+        "Physics",
+        "3D",
+        "UI",
+        "Audio",
+        "Optimization"
+      ],
+      "tools": [
+        "Unity",
+        "Unreal Engine",
+        "Godot",
+        "Blender",
+        "Git"
+      ],
+      "career_roles": [
+        "Gameplay Programmer",
+        "Game Developer",
+        "Technical Designer",
+        "Graphics Programmer"
+      ],
+      "steps": [
+        {
+          "title": "Programming & Math",
+          "level": "Beginner",
+          "topics": [
+            "C# or C++",
+            "Vectors",
+            "Coordinates",
+            "Angles",
+            "Functions",
+            "OOP"
+          ],
+          "learning_outcome": "Write gameplay logic and understand spatial calculations.",
+          "projects": [
+            "Text adventure",
+            "2D movement demo"
+          ]
+        },
+        {
+          "title": "Game Engine Basics",
+          "level": "Beginner",
+          "topics": [
+            "Scenes",
+            "Game objects",
+            "Components",
+            "Input",
+            "Assets",
+            "Prefabs"
+          ],
+          "learning_outcome": "Create a small interactive game.",
+          "projects": [
+            "2D platformer prototype"
+          ]
+        },
+        {
+          "title": "Gameplay Systems",
+          "level": "Intermediate",
+          "topics": [
+            "Character controllers",
+            "Collision",
+            "Physics",
+            "UI",
+            "Inventory",
+            "Health",
+            "Save systems"
+          ],
+          "learning_outcome": "Build reusable gameplay features.",
+          "projects": [
+            "Top-down survival game"
+          ]
+        },
+        {
+          "title": "Graphics & Audio",
+          "level": "Intermediate",
+          "topics": [
+            "Lighting",
+            "Materials",
+            "Cameras",
+            "Animation",
+            "Shaders basics",
+            "Audio"
+          ],
+          "learning_outcome": "Create a visually coherent game.",
+          "projects": [
+            "Small 3D environment"
+          ]
+        },
+        {
+          "title": "AI & Multiplayer Concepts",
+          "level": "Advanced",
+          "topics": [
+            "Pathfinding",
+            "State machines",
+            "Behavior trees",
+            "Networking concepts",
+            "Client/server"
+          ],
+          "learning_outcome": "Implement intelligent and network-aware gameplay.",
+          "projects": [
+            "Enemy AI arena"
+          ]
+        },
+        {
+          "title": "Optimization & Publishing",
+          "level": "Advanced",
+          "topics": [
+            "Profiling",
+            "Memory",
+            "Draw calls",
+            "Build pipelines",
+            "Input testing",
+            "Store/release workflow"
+          ],
+          "learning_outcome": "Prepare a polished game build.",
+          "projects": [
+            "Publishable game prototype"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Unity Learn",
+          "type": "Course",
+          "url": "https://learn.unity.com/"
+        },
+        {
+          "name": "Unreal Engine Documentation",
+          "type": "Documentation",
+          "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine"
+        },
+        {
+          "name": "Godot Docs",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "Blender Manual",
+          "type": "Tutorial",
+          "url": ""
+        }
+      ],
+      "final_project": "Build a complete small game with menus, save/load, gameplay systems, audio, AI and a polished release build."
+    },
+    {
+      "slug": "embedded-systems",
+      "name": "Embedded Systems",
+      "icon": "🔧",
+      "difficulty": "Intermediate → Advanced",
+      "estimated_time": "8–18 months",
+      "overview": "Learn to program microcontrollers and build reliable software tightly integrated with hardware.",
+      "prerequisites": [
+        "C programming",
+        "Basic electronics",
+        "Binary/hexadecimal"
+      ],
+      "skills": [
+        "C/C++",
+        "Microcontrollers",
+        "GPIO",
+        "Timers",
+        "Interrupts",
+        "UART/I2C/SPI",
+        "RTOS"
+      ],
+      "tools": [
+        "Arduino",
+        "ESP32",
+        "STM32",
+        "PlatformIO",
+        "Logic analyzer"
+      ],
+      "career_roles": [
+        "Embedded Engineer",
+        "Firmware Engineer",
+        "IoT Engineer",
+        "Hardware-Software Engineer"
+      ],
+      "steps": [
+        {
+          "title": "C & Electronics",
+          "level": "Beginner",
+          "topics": [
+            "C pointers",
+            "Memory",
+            "Bitwise operations",
+            "Binary/hex",
+            "Voltage/current",
+            "Digital logic"
+          ],
+          "learning_outcome": "Understand low-level programming and basic circuits.",
+          "projects": [
+            "LED controller",
+            "Digital logic exercises"
+          ]
+        },
+        {
+          "title": "Microcontroller Basics",
+          "level": "Beginner",
+          "topics": [
+            "GPIO",
+            "Timers",
+            "PWM",
+            "ADC",
+            "Interrupts"
+          ],
+          "learning_outcome": "Control sensors, LEDs and actuators.",
+          "projects": [
+            "Traffic light controller",
+            "Temperature monitor"
+          ]
+        },
+        {
+          "title": "Communication Protocols",
+          "level": "Intermediate",
+          "topics": [
+            "UART",
+            "I2C",
+            "SPI",
+            "CAN concepts",
+            "Serial debugging"
+          ],
+          "learning_outcome": "Connect multiple devices and sensors.",
+          "projects": [
+            "Sensor hub"
+          ]
+        },
+        {
+          "title": "Embedded Architecture",
+          "level": "Intermediate",
+          "topics": [
+            "State machines",
+            "Drivers",
+            "Memory layout",
+            "Watchdog",
+            "Error handling"
+          ],
+          "learning_outcome": "Write robust firmware.",
+          "projects": [
+            "Device controller firmware"
+          ]
+        },
+        {
+          "title": "RTOS & Advanced Systems",
+          "level": "Advanced",
+          "topics": [
+            "Tasks",
+            "Scheduling",
+            "Queues",
+            "Semaphores",
+            "RTOS",
+            "Power management"
+          ],
+          "learning_outcome": "Build multitasking embedded applications.",
+          "projects": [
+            "RTOS sensor system"
+          ]
+        },
+        {
+          "title": "Testing & Production",
+          "level": "Advanced",
+          "topics": [
+            "Hardware debugging",
+            "Unit testing",
+            "Integration testing",
+            "Bootloaders",
+            "OTA",
+            "Security"
+          ],
+          "learning_outcome": "Prepare firmware for real deployment.",
+          "projects": [
+            "OTA-enabled IoT device"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Arduino Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "STM32 Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "ESP-IDF Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "FreeRTOS Documentation",
+          "type": "Documentation",
+          "url": ""
+        }
+      ],
+      "final_project": "Build an ESP32/STM32-based IoT device with sensors, communication, local control, logging and secure firmware updates."
+    },
+    {
+      "slug": "robotics",
+      "name": "Robotics",
+      "icon": "🦾",
+      "difficulty": "Intermediate → Advanced",
+      "estimated_time": "9–18 months",
+      "overview": "Combine programming, electronics, control, sensors and robotics software to build autonomous machines.",
+      "prerequisites": [
+        "Python/C++",
+        "Basic electronics",
+        "Basic mathematics"
+      ],
+      "skills": [
+        "C++",
+        "Python",
+        "Sensors",
+        "Actuators",
+        "Control",
+        "Kinematics",
+        "ROS",
+        "Computer Vision"
+      ],
+      "tools": [
+        "Arduino",
+        "ESP32",
+        "Raspberry Pi",
+        "ROS 2",
+        "Gazebo/modern simulators"
+      ],
+      "career_roles": [
+        "Robotics Engineer",
+        "Automation Engineer",
+        "ROS Developer",
+        "Robotics Software Engineer"
+      ],
+      "steps": [
+        {
+          "title": "Programming & Electronics",
+          "level": "Beginner",
+          "topics": [
+            "C++/Python",
+            "GPIO",
+            "Motors",
+            "Sensors",
+            "Power basics"
+          ],
+          "learning_outcome": "Control hardware and read sensor data.",
+          "projects": [
+            "Line-following robot"
+          ]
+        },
+        {
+          "title": "Robotics Math",
+          "level": "Intermediate",
+          "topics": [
+            "Vectors",
+            "Matrices",
+            "Coordinate frames",
+            "Trigonometry",
+            "Transforms"
+          ],
+          "learning_outcome": "Represent robot position and motion mathematically.",
+          "projects": [
+            "2-link arm simulation"
+          ]
+        },
+        {
+          "title": "Control Systems",
+          "level": "Intermediate",
+          "topics": [
+            "Feedback",
+            "PID",
+            "Motor control",
+            "Stability",
+            "Sampling"
+          ],
+          "learning_outcome": "Make physical systems respond accurately.",
+          "projects": [
+            "PID line follower"
+          ]
+        },
+        {
+          "title": "Kinematics & Planning",
+          "level": "Advanced",
+          "topics": [
+            "Forward kinematics",
+            "Inverse kinematics",
+            "Path planning",
+            "Obstacle avoidance"
+          ],
+          "learning_outcome": "Plan robot movement.",
+          "projects": [
+            "Robot arm simulation"
+          ]
+        },
+        {
+          "title": "ROS 2",
+          "level": "Advanced",
+          "topics": [
+            "Nodes",
+            "Topics",
+            "Services",
+            "Actions",
+            "TF",
+            "Launch",
+            "Packages"
+          ],
+          "learning_outcome": "Build modular robotics software.",
+          "projects": [
+            "ROS 2 mobile robot"
+          ]
+        },
+        {
+          "title": "Perception & Autonomy",
+          "level": "Advanced",
+          "topics": [
+            "LiDAR",
+            "Camera",
+            "Computer vision",
+            "Localization",
+            "Mapping",
+            "Navigation"
+          ],
+          "learning_outcome": "Build autonomous behavior.",
+          "projects": [
+            "Autonomous indoor robot"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "ROS 2 Documentation",
+          "type": "Documentation",
+          "url": "https://docs.ros.org/en/rolling/"
+        },
+        {
+          "name": "Arduino Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "OpenCV Documentation",
+          "type": "Documentation",
+          "url": "https://docs.opencv.org/"
+        },
+        {
+          "name": "Gazebo/robotics simulator documentation",
+          "type": "Documentation",
+          "url": ""
+        }
+      ],
+      "final_project": "Build or simulate an autonomous robot that senses its environment, plans movement and reports telemetry."
+    },
+    {
+      "slug": "blockchain-web3",
+      "name": "Blockchain & Web3",
+      "icon": "⛓️",
+      "difficulty": "Intermediate → Advanced",
+      "estimated_time": "6–12 months",
+      "overview": "Learn decentralized systems, smart contracts, wallets, blockchain data models and secure dApp development.",
+      "prerequisites": [
+        "JavaScript/TypeScript",
+        "Basic cryptography",
+        "Web development"
+      ],
+      "skills": [
+        "Blockchain Concepts",
+        "Solidity",
+        "Smart Contracts",
+        "Wallets",
+        "Web3 APIs",
+        "Security"
+      ],
+      "tools": [
+        "Node.js",
+        "Hardhat/Foundry",
+        "MetaMask",
+        "Solidity",
+        "Git"
+      ],
+      "career_roles": [
+        "Blockchain Developer",
+        "Smart Contract Developer",
+        "Web3 Developer",
+        "Protocol Engineer"
+      ],
+      "steps": [
+        {
+          "title": "Blockchain Fundamentals",
+          "level": "Beginner",
+          "topics": [
+            "Blocks",
+            "Transactions",
+            "Hashes",
+            "Consensus",
+            "Public/private keys",
+            "Wallets"
+          ],
+          "learning_outcome": "Explain how decentralized ledgers work.",
+          "projects": [
+            "Build a toy blockchain"
+          ]
+        },
+        {
+          "title": "Cryptography",
+          "level": "Intermediate",
+          "topics": [
+            "Hashing",
+            "Digital signatures",
+            "Key pairs",
+            "Merkle trees"
+          ],
+          "learning_outcome": "Understand the security primitives behind blockchains.",
+          "projects": [
+            "Signature verification demo"
+          ]
+        },
+        {
+          "title": "Smart Contracts",
+          "level": "Intermediate",
+          "topics": [
+            "Solidity",
+            "Contract state",
+            "Functions",
+            "Events",
+            "Modifiers",
+            "Errors"
+          ],
+          "learning_outcome": "Write basic smart contracts safely in a test environment.",
+          "projects": [
+            "Token contract on testnet/local chain"
+          ]
+        },
+        {
+          "title": "dApp Development",
+          "level": "Advanced",
+          "topics": [
+            "Wallet connection",
+            "Web3 libraries",
+            "Contract calls",
+            "Events",
+            "Frontend integration"
+          ],
+          "learning_outcome": "Connect a web UI to smart contracts.",
+          "projects": [
+            "Voting dApp",
+            "Simple marketplace"
+          ]
+        },
+        {
+          "title": "Security",
+          "level": "Advanced",
+          "topics": [
+            "Reentrancy",
+            "Access control",
+            "Integer issues",
+            "Oracle risks",
+            "Upgrade risks",
+            "Testing"
+          ],
+          "learning_outcome": "Recognize and prevent common smart-contract vulnerabilities.",
+          "projects": [
+            "Audit a deliberately vulnerable contract"
+          ]
+        },
+        {
+          "title": "Architecture & Deployment",
+          "level": "Advanced",
+          "topics": [
+            "Testnets",
+            "Gas concepts",
+            "Indexing",
+            "Events",
+            "Frontend hosting",
+            "Contract verification"
+          ],
+          "learning_outcome": "Ship a complete testnet dApp.",
+          "projects": [
+            "Decentralized certificate system"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Ethereum Developer Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "Solidity Documentation",
+          "type": "Documentation",
+          "url": "https://docs.soliditylang.org/"
+        },
+        {
+          "name": "OpenZeppelin Contracts Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "Foundry Documentation",
+          "type": "Documentation",
+          "url": ""
+        }
+      ],
+      "final_project": "Build a testnet-only decentralized certificate or voting application with audited access control and a web frontend."
+    },
+    {
+      "slug": "ui-ux-design",
+      "name": "UI/UX Design",
+      "icon": "🎨",
+      "difficulty": "Beginner → Advanced",
+      "estimated_time": "4–9 months",
+      "overview": "Learn how to research users, structure information and design usable, accessible digital interfaces.",
+      "prerequisites": [
+        "None"
+      ],
+      "skills": [
+        "UX Research",
+        "Information Architecture",
+        "Wireframing",
+        "Visual Design",
+        "Prototyping",
+        "Usability Testing"
+      ],
+      "tools": [
+        "Figma",
+        "FigJam",
+        "Design systems",
+        "Prototyping tools"
+      ],
+      "career_roles": [
+        "UI Designer",
+        "UX Designer",
+        "Product Designer",
+        "UX Researcher"
+      ],
+      "steps": [
+        {
+          "title": "Design Fundamentals",
+          "level": "Beginner",
+          "topics": [
+            "Color",
+            "Typography",
+            "Spacing",
+            "Contrast",
+            "Composition",
+            "Visual hierarchy"
+          ],
+          "learning_outcome": "Create visually consistent interfaces.",
+          "projects": [
+            "Mobile login screen",
+            "Landing page"
+          ]
+        },
+        {
+          "title": "UX Research",
+          "level": "Beginner",
+          "topics": [
+            "User interviews",
+            "Personas",
+            "User journeys",
+            "Problem statements",
+            "Competitor analysis"
+          ],
+          "learning_outcome": "Understand users before designing solutions.",
+          "projects": [
+            "Research report"
+          ]
+        },
+        {
+          "title": "Information Architecture",
+          "level": "Intermediate",
+          "topics": [
+            "Sitemaps",
+            "Navigation",
+            "Content hierarchy",
+            "User flows"
+          ],
+          "learning_outcome": "Structure complex products clearly.",
+          "projects": [
+            "E-commerce sitemap"
+          ]
+        },
+        {
+          "title": "Wireframes & Prototypes",
+          "level": "Intermediate",
+          "topics": [
+            "Low fidelity",
+            "High fidelity",
+            "Components",
+            "Interactive prototypes"
+          ],
+          "learning_outcome": "Communicate and test product ideas.",
+          "projects": [
+            "App prototype"
+          ]
+        },
+        {
+          "title": "Usability & Accessibility",
+          "level": "Advanced",
+          "topics": [
+            "Usability testing",
+            "WCAG concepts",
+            "Keyboard access",
+            "Error states",
+            "Responsive design"
+          ],
+          "learning_outcome": "Design interfaces that work for diverse users.",
+          "projects": [
+            "Accessibility audit"
+          ]
+        },
+        {
+          "title": "Design Systems & Handoff",
+          "level": "Advanced",
+          "topics": [
+            "Tokens",
+            "Components",
+            "Variants",
+            "Documentation",
+            "Developer handoff"
+          ],
+          "learning_outcome": "Create scalable design systems.",
+          "projects": [
+            "Mini design system"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Figma Learn",
+          "type": "Course",
+          "url": ""
+        },
+        {
+          "name": "Material Design",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "Apple Human Interface Guidelines",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "WCAG/W3C resources",
+          "type": "Tutorial",
+          "url": ""
+        }
+      ],
+      "final_project": "Design an end-to-end learning platform from research and user flows to a complete interactive prototype and design system."
+    },
+    {
+      "slug": "computer-graphics",
+      "name": "Computer Graphics",
+      "icon": "🖼️",
+      "difficulty": "Intermediate → Advanced",
+      "estimated_time": "8–18 months",
+      "overview": "Learn how images and 2D/3D scenes are represented, transformed, rendered and displayed.",
+      "prerequisites": [
+        "C++ or Python",
+        "Linear algebra",
+        "Basic geometry"
+      ],
+      "skills": [
+        "Linear Algebra",
+        "Rendering",
+        "OpenGL/WebGL",
+        "Shaders",
+        "3D Math",
+        "Optimization"
+      ],
+      "tools": [
+        "C++",
+        "OpenGL",
+        "WebGL",
+        "GLSL",
+        "Blender"
+      ],
+      "career_roles": [
+        "Graphics Programmer",
+        "Rendering Engineer",
+        "Visualization Developer",
+        "Technical Artist"
+      ],
+      "steps": [
+        {
+          "title": "Math Foundations",
+          "level": "Beginner",
+          "topics": [
+            "Vectors",
+            "Matrices",
+            "Coordinate systems",
+            "Transformations",
+            "Dot/cross product"
+          ],
+          "learning_outcome": "Represent objects, cameras and transformations mathematically.",
+          "projects": [
+            "2D transformation demo"
+          ]
+        },
+        {
+          "title": "2D Graphics",
+          "level": "Beginner",
+          "topics": [
+            "Pixels",
+            "Rasterization",
+            "Lines",
+            "Shapes",
+            "Images",
+            "Alpha"
+          ],
+          "learning_outcome": "Implement basic drawing and image operations.",
+          "projects": [
+            "Paint application"
+          ]
+        },
+        {
+          "title": "3D Graphics",
+          "level": "Intermediate",
+          "topics": [
+            "Meshes",
+            "Camera",
+            "Perspective",
+            "Lighting",
+            "Depth buffer",
+            "Textures"
+          ],
+          "learning_outcome": "Render a basic interactive 3D scene.",
+          "projects": [
+            "3D model viewer"
+          ]
+        },
+        {
+          "title": "Shaders",
+          "level": "Advanced",
+          "topics": [
+            "Vertex shaders",
+            "Fragment shaders",
+            "Normals",
+            "Materials",
+            "Lighting models"
+          ],
+          "learning_outcome": "Control the rendering pipeline with shaders.",
+          "projects": [
+            "Toon shader",
+            "Phong lighting demo"
+          ]
+        },
+        {
+          "title": "Advanced Rendering",
+          "level": "Advanced",
+          "topics": [
+            "Shadow mapping",
+            "Post-processing",
+            "PBR concepts",
+            "Deferred rendering"
+          ],
+          "learning_outcome": "Build more realistic and efficient rendering effects.",
+          "projects": [
+            "Mini rendering engine"
+          ]
+        },
+        {
+          "title": "Optimization & Applications",
+          "level": "Advanced",
+          "topics": [
+            "GPU/CPU profiling",
+            "Culling",
+            "Level of detail",
+            "Visualization"
+          ],
+          "learning_outcome": "Optimize graphics workloads for real applications.",
+          "projects": [
+            "Interactive 3D visualization"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Khronos OpenGL resources",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "WebGL documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "LearnOpenGL",
+          "type": "Course",
+          "url": ""
+        },
+        {
+          "name": "Blender Manual",
+          "type": "Tutorial",
+          "url": ""
+        }
+      ],
+      "final_project": "Build a small 3D renderer or interactive visualization with camera controls, lighting, textures and custom shaders."
+    },
+    {
+      "slug": "ar-vr",
+      "name": "AR & VR",
+      "icon": "🥽",
+      "difficulty": "Intermediate → Advanced",
+      "estimated_time": "8–18 months",
+      "overview": "Learn immersive application development, spatial interaction, 3D environments and device-aware UX.",
+      "prerequisites": [
+        "3D programming basics",
+        "Game engine basics"
+      ],
+      "skills": [
+        "3D",
+        "Unity/Unreal",
+        "XR Interaction",
+        "Spatial UI",
+        "Tracking",
+        "Optimization"
+      ],
+      "tools": [
+        "Unity",
+        "Unreal Engine",
+        "OpenXR",
+        "Blender"
+      ],
+      "career_roles": [
+        "XR Developer",
+        "AR Developer",
+        "VR Developer",
+        "Immersive Experience Developer"
+      ],
+      "steps": [
+        {
+          "title": "3D Foundations",
+          "level": "Beginner",
+          "topics": [
+            "3D coordinates",
+            "Cameras",
+            "Transforms",
+            "Lighting",
+            "Materials",
+            "Physics"
+          ],
+          "learning_outcome": "Build interactive 3D environments.",
+          "projects": [
+            "Interactive 3D room"
+          ]
+        },
+        {
+          "title": "XR Concepts",
+          "level": "Intermediate",
+          "topics": [
+            "AR vs VR",
+            "Head tracking",
+            "Controllers",
+            "Hand tracking",
+            "Spatial anchors"
+          ],
+          "learning_outcome": "Understand how immersive devices interact with software.",
+          "projects": [
+            "XR interaction demo"
+          ]
+        },
+        {
+          "title": "Interaction Design",
+          "level": "Intermediate",
+          "topics": [
+            "Ray interaction",
+            "Grab systems",
+            "Gaze",
+            "Locomotion",
+            "Spatial UI"
+          ],
+          "learning_outcome": "Create comfortable and understandable immersive interactions.",
+          "projects": [
+            "VR menu system"
+          ]
+        },
+        {
+          "title": "AR Features",
+          "level": "Advanced",
+          "topics": [
+            "Plane detection",
+            "Anchors",
+            "Occlusion concepts",
+            "World tracking",
+            "Camera integration"
+          ],
+          "learning_outcome": "Create AR experiences that respond to real environments.",
+          "projects": [
+            "AR furniture placement demo"
+          ]
+        },
+        {
+          "title": "Performance & Comfort",
+          "level": "Advanced",
+          "topics": [
+            "Frame rate",
+            "Latency",
+            "Draw calls",
+            "Foveation concepts",
+            "Motion comfort"
+          ],
+          "learning_outcome": "Optimize immersive applications and reduce discomfort.",
+          "projects": [
+            "Optimized VR scene"
+          ]
+        },
+        {
+          "title": "Production",
+          "level": "Advanced",
+          "topics": [
+            "Testing",
+            "Device deployment",
+            "Analytics",
+            "Accessibility",
+            "User studies"
+          ],
+          "learning_outcome": "Prepare an XR application for real users.",
+          "projects": [
+            "Complete XR prototype"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "OpenXR Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "Unity XR documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "Unreal Engine XR documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "Blender Manual",
+          "type": "Tutorial",
+          "url": ""
+        }
+      ],
+      "final_project": "Build an AR/VR educational experience with spatial interactions, optimized performance and a usability test report."
+    },
+    {
+      "slug": "natural-language-processing",
+      "name": "Natural Language Processing",
+      "icon": "💬",
+      "difficulty": "Intermediate → Advanced",
+      "estimated_time": "8–18 months",
+      "overview": "Learn how to process, represent, classify, retrieve and generate human language with statistical and neural methods.",
+      "prerequisites": [
+        "Python",
+        "Statistics",
+        "Basic machine learning"
+      ],
+      "skills": [
+        "Text Processing",
+        "Embeddings",
+        "Classification",
+        "Transformers",
+        "Evaluation",
+        "LLM Applications"
+      ],
+      "tools": [
+        "Python",
+        "Pandas",
+        "scikit-learn",
+        "PyTorch",
+        "Hugging Face"
+      ],
+      "career_roles": [
+        "NLP Engineer",
+        "ML Engineer",
+        "AI Engineer",
+        "Applied Scientist"
+      ],
+      "steps": [
+        {
+          "title": "Text Processing",
+          "level": "Beginner",
+          "topics": [
+            "Unicode",
+            "Tokenization",
+            "Normalization",
+            "Stop words",
+            "N-grams",
+            "Regular expressions"
+          ],
+          "learning_outcome": "Prepare text data for analysis and modeling.",
+          "projects": [
+            "Bangla/English text cleaner"
+          ]
+        },
+        {
+          "title": "Classical NLP",
+          "level": "Intermediate",
+          "topics": [
+            "TF-IDF",
+            "Naive Bayes",
+            "Logistic regression",
+            "Sentiment analysis",
+            "Topic modeling"
+          ],
+          "learning_outcome": "Build baseline NLP models.",
+          "projects": [
+            "Sentiment classifier",
+            "Spam detector"
+          ]
+        },
+        {
+          "title": "Embeddings",
+          "level": "Intermediate",
+          "topics": [
+            "Word embeddings",
+            "Sentence embeddings",
+            "Similarity",
+            "Vector search"
+          ],
+          "learning_outcome": "Represent language as useful numerical vectors.",
+          "projects": [
+            "Semantic search engine"
+          ]
+        },
+        {
+          "title": "Deep Learning for NLP",
+          "level": "Advanced",
+          "topics": [
+            "RNN concepts",
+            "Attention",
+            "Transformers",
+            "Fine-tuning",
+            "Sequence classification"
+          ],
+          "learning_outcome": "Build modern neural NLP systems.",
+          "projects": [
+            "Text classifier with transformer"
+          ]
+        },
+        {
+          "title": "LLM Applications",
+          "level": "Advanced",
+          "topics": [
+            "Prompting",
+            "RAG",
+            "Chunking",
+            "Retrieval",
+            "Evaluation",
+            "Tool calling concepts"
+          ],
+          "learning_outcome": "Build reliable language-model applications.",
+          "projects": [
+            "Document Q&A system"
+          ]
+        },
+        {
+          "title": "Production NLP",
+          "level": "Advanced",
+          "topics": [
+            "Latency",
+            "Caching",
+            "Safety",
+            "Monitoring",
+            "Evaluation datasets",
+            "Privacy"
+          ],
+          "learning_outcome": "Deploy NLP systems responsibly.",
+          "projects": [
+            "Production-style RAG API"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Hugging Face Course",
+          "type": "Course",
+          "url": ""
+        },
+        {
+          "name": "PyTorch Tutorials",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "scikit-learn User Guide",
+          "type": "Course",
+          "url": ""
+        },
+        {
+          "name": "Stanford NLP course materials",
+          "type": "Course",
+          "url": ""
+        }
+      ],
+      "final_project": "Build a document Q&A system with retrieval, citations, evaluation tests and a simple web interface."
+    },
+    {
+      "slug": "computer-vision",
+      "name": "Computer Vision",
+      "icon": "👁️",
+      "difficulty": "Intermediate → Advanced",
+      "estimated_time": "8–18 months",
+      "overview": "Learn how machines process images and video for classification, detection, segmentation and visual understanding.",
+      "prerequisites": [
+        "Python",
+        "Linear algebra basics",
+        "Machine learning basics"
+      ],
+      "skills": [
+        "Image Processing",
+        "OpenCV",
+        "CNNs",
+        "Detection",
+        "Segmentation",
+        "Vision Transformers",
+        "Deployment"
+      ],
+      "tools": [
+        "Python",
+        "OpenCV",
+        "PyTorch",
+        "NumPy",
+        "Jupyter"
+      ],
+      "career_roles": [
+        "Computer Vision Engineer",
+        "ML Engineer",
+        "AI Engineer",
+        "Robotics Vision Engineer"
+      ],
+      "steps": [
+        {
+          "title": "Image Fundamentals",
+          "level": "Beginner",
+          "topics": [
+            "Pixels",
+            "Color spaces",
+            "Image formats",
+            "Convolution",
+            "Filtering",
+            "Histograms"
+          ],
+          "learning_outcome": "Manipulate and inspect images programmatically.",
+          "projects": [
+            "Image processing toolkit"
+          ]
+        },
+        {
+          "title": "OpenCV",
+          "level": "Beginner",
+          "topics": [
+            "Read/write images",
+            "Resize",
+            "Thresholding",
+            "Contours",
+            "Video capture",
+            "Feature detection"
+          ],
+          "learning_outcome": "Build practical computer-vision utilities.",
+          "projects": [
+            "Document scanner"
+          ]
+        },
+        {
+          "title": "Classical Vision",
+          "level": "Intermediate",
+          "topics": [
+            "Edges",
+            "Features",
+            "Morphology",
+            "Optical flow concepts",
+            "Camera geometry"
+          ],
+          "learning_outcome": "Solve simple vision problems without deep learning.",
+          "projects": [
+            "Shape detector"
+          ]
+        },
+        {
+          "title": "Deep Vision",
+          "level": "Advanced",
+          "topics": [
+            "CNNs",
+            "Transfer learning",
+            "Augmentation",
+            "Detection",
+            "Segmentation"
+          ],
+          "learning_outcome": "Train models for visual recognition.",
+          "projects": [
+            "Image classifier",
+            "Object detector"
+          ]
+        },
+        {
+          "title": "Modern Vision",
+          "level": "Advanced",
+          "topics": [
+            "Vision transformers",
+            "Embeddings",
+            "Multimodal concepts"
+          ],
+          "learning_outcome": "Explore current vision architectures and representations.",
+          "projects": [
+            "Image similarity search"
+          ]
+        },
+        {
+          "title": "Deployment",
+          "level": "Advanced",
+          "topics": [
+            "Model optimization",
+            "Inference APIs",
+            "Video pipelines",
+            "Edge constraints",
+            "Monitoring"
+          ],
+          "learning_outcome": "Run vision models in practical applications.",
+          "projects": [
+            "Real-time webcam detector"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "OpenCV Documentation",
+          "type": "Documentation",
+          "url": "https://docs.opencv.org/"
+        },
+        {
+          "name": "PyTorch Tutorials",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "Hugging Face Vision resources",
+          "type": "Tutorial",
+          "url": ""
+        },
+        {
+          "name": "Kaggle Learn",
+          "type": "Practice",
+          "url": ""
+        }
+      ],
+      "final_project": "Build a real-time computer-vision application that processes camera/video input, performs inference and displays results."
+    },
+    {
+      "slug": "system-administration",
+      "name": "System Administration",
+      "icon": "🖥️",
+      "difficulty": "Beginner → Advanced",
+      "estimated_time": "6–12 months",
+      "overview": "Learn how to install, configure, secure, monitor and troubleshoot operating systems and servers.",
+      "prerequisites": [
+        "Basic computer hardware/software knowledge"
+      ],
+      "skills": [
+        "Linux",
+        "Windows Server concepts",
+        "Networking",
+        "Shell",
+        "Users/permissions",
+        "Backups",
+        "Monitoring"
+      ],
+      "tools": [
+        "Ubuntu/Debian",
+        "PowerShell",
+        "Bash",
+        "SSH",
+        "Docker",
+        "VirtualBox"
+      ],
+      "career_roles": [
+        "System Administrator",
+        "Linux Administrator",
+        "IT Operations Engineer",
+        "Infrastructure Engineer"
+      ],
+      "steps": [
+        {
+          "title": "Operating System Basics",
+          "level": "Beginner",
+          "topics": [
+            "Processes",
+            "Filesystems",
+            "Users",
+            "Permissions",
+            "Services",
+            "Package managers"
+          ],
+          "learning_outcome": "Manage an operating system from the command line.",
+          "projects": [
+            "Linux server setup"
+          ]
+        },
+        {
+          "title": "Networking",
+          "level": "Beginner",
+          "topics": [
+            "IP",
+            "DNS",
+            "DHCP",
+            "Ports",
+            "SSH",
+            "Firewalls"
+          ],
+          "learning_outcome": "Connect and troubleshoot server networking.",
+          "projects": [
+            "Two-server lab"
+          ]
+        },
+        {
+          "title": "Shell & Automation",
+          "level": "Intermediate",
+          "topics": [
+            "Bash",
+            "PowerShell",
+            "Cron",
+            "Environment variables",
+            "Scripting"
+          ],
+          "learning_outcome": "Automate repetitive administration tasks.",
+          "projects": [
+            "Automated backup script"
+          ]
+        },
+        {
+          "title": "Services & Servers",
+          "level": "Intermediate",
+          "topics": [
+            "Web server",
+            "Reverse proxy",
+            "Databases",
+            "Logs",
+            "TLS concepts"
+          ],
+          "learning_outcome": "Host and maintain common services.",
+          "projects": [
+            "Self-hosted web server"
+          ]
+        },
+        {
+          "title": "Security & Backups",
+          "level": "Advanced",
+          "topics": [
+            "Hardening",
+            "Least privilege",
+            "Updates",
+            "Backups",
+            "Recovery",
+            "Secrets"
+          ],
+          "learning_outcome": "Operate systems safely.",
+          "projects": [
+            "Server hardening checklist"
+          ]
+        },
+        {
+          "title": "Monitoring & Reliability",
+          "level": "Advanced",
+          "topics": [
+            "Metrics",
+            "Logs",
+            "Alerts",
+            "Capacity planning",
+            "Incident response"
+          ],
+          "learning_outcome": "Maintain systems using proactive monitoring.",
+          "projects": [
+            "Monitoring dashboard",
+            "Incident drill"
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "name": "Ubuntu Server Documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "Red Hat documentation",
+          "type": "Documentation",
+          "url": ""
+        },
+        {
+          "name": "Microsoft Learn",
+          "type": "Course",
+          "url": ""
+        },
+        {
+          "name": "Linux man pages",
+          "type": "Tutorial",
+          "url": ""
+        }
+      ],
+      "final_project": "Build a small virtual server lab with users, SSH, firewall rules, web service, automated backups and monitoring."
+    }
+  ]
+}
