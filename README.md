@@ -10,7 +10,7 @@ The goal is simple:
 
 ## 🔗 Live Demo
 
-## Visist: [CSE ROADMAP](https://cse-roadmap-by-sazzad.vercel.app/)
+## Visit: [CSE ROADMAP](https://cse-roadmap-by-sazzad.vercel.app/)
 
 ---
 
