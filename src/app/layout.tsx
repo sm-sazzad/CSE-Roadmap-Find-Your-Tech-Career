@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
+import { Inter, Noto_Sans_Bengali } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { LanguageProvider } from "@/lib/i18n";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const bengali = Noto_Sans_Bengali({
+  subsets: ["bengali"],
+  variable: "--font-bengali",
+});
 
 export const metadata: Metadata = {
-  title: "CodePath — CSE Career Roadmaps",
+  title: "CodePath — Zero-to-Hero CSE Career Roadmaps (বাংলা + English)",
   description:
-    "Explore structured career roadmaps for Computer Science and Engineering.",
+    "Free step-by-step roadmaps for every CSE career, with simple explanations, free resources and projects. Available in Bangla and English.",
 };
 
 export default function RootLayout({
@@ -14,10 +22,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${bengali.variable}`}>
       <body>
-        <Navbar />
-        {children}
+        <LanguageProvider>
+          <Navbar />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

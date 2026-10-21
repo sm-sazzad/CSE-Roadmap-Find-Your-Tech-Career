@@ -1,6 +1,12 @@
 {
   "sectors": [
     {
+      "slug": "programming-fundamentals",
+      "name": "Programming & CS Fundamentals",
+      "description": "Start here: learn programming, problem solving, data structures and algorithms from zero.",
+      "icon": "🧠"
+    },
+    {
       "slug": "web-development",
       "name": "Web Development",
       "description": "Learn how to build modern websites and web applications.",
@@ -119,6 +125,24 @@
       "name": "System Administration",
       "description": "Learn Linux, servers, system configuration, monitoring, networking, and infrastructure management.",
       "icon": "🖥️"
+    },
+    {
+      "slug": "qa-testing",
+      "name": "QA & Software Testing",
+      "description": "Find bugs before users do and make sure software really works.",
+      "icon": "🧪"
+    },
+    {
+      "slug": "competitive-programming",
+      "name": "Competitive Programming",
+      "description": "Train your brain to solve hard problems fast, like a sport for programmers.",
+      "icon": "🏁"
+    },
+    {
+      "slug": "tech-career-freelancing",
+      "name": "Tech Career & Freelancing",
+      "description": "Turn your skills into a job or client work with a strong profile and good communication.",
+      "icon": "💼"
     }
   ]
 }
