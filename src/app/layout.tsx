@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ToastHost from "@/components/ToastHost";
 import SocialWelcomeToast from "@/components/notifications/SocialWelcomeToast";
+import ChatWidget from "@/components/chatbot/ChatWidget";
 import { LanguageProvider } from "@/lib/i18n";
 import { ProgressProvider } from "@/lib/progress";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
             <SocialWelcomeToast />
             {children}
             <Footer />
+            <ChatWidget />
           </ProgressProvider>
         </LanguageProvider>
       </body>
