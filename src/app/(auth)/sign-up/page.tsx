@@ -121,27 +121,28 @@ export default function SignupPage() {
   }
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#070710] text-white">
-      <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-violet-600/15 blur-[130px]" />
-      <div className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-blue-600/15 blur-[130px]" />
+    <main className="relative min-h-screen overflow-hidden bg-[#06080e] text-white">
+      <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#00f5a0]/10 blur-[140px]" />
+      <div className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-[#00d2ff]/10 blur-[140px]" />
+      <div className="grid-mesh absolute inset-0 opacity-40 pointer-events-none" />
 
       <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-8 lg:px-12">
         <Link href="/" className="group flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-violet-400/20 bg-violet-500/10 text-violet-300 transition duration-300 group-hover:scale-105 group-hover:bg-violet-500/20">
-            <Code2 size={25} />
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.1] bg-[#0d1220] text-[#00f5a0] shadow-[0_0_20px_rgba(0,245,160,0.15)] transition duration-300 group-hover:scale-105 group-hover:border-[#00f5a0]/40">
+            <Code2 size={24} />
           </div>
           <div>
-            <p className="text-lg font-bold tracking-tight">
-              CSE <span className="text-violet-400">Roadmap</span>
+            <p className="text-lg font-bold tracking-tight font-heading">
+              Code<span className="text-[#00f5a0]">Path</span>
             </p>
-            <p className="text-xs text-zinc-500"><Bi en="Find Your Tech Career" bn="তোমার টেক ক্যারিয়ার খুঁজে নাও" /></p>
+            <p className="text-xs text-zinc-500 font-mono"><Bi en="Zero-to-Hero Tech Career" bn="তোমার টেক ক্যারিয়ার রোডম্যাপ" /></p>
           </div>
         </Link>
         <Link
           href="/"
-          className="flex items-center gap-2 text-sm text-zinc-400 transition hover:text-white"
+          className="flex items-center gap-2 text-xs font-mono text-zinc-400 transition hover:text-white"
         >
-          <ArrowLeft size={16} />
+          <ArrowLeft size={14} />
           <span><Bi en="Back to Home" bn="হোমে ফিরে যাও" /></span>
         </Link>
       </header>
@@ -153,13 +154,13 @@ export default function SignupPage() {
           transition={{ duration: 0.7 }}
           className="hidden lg:block"
         >
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-violet-400/15 bg-violet-500/[0.07] px-4 py-2 text-xs font-medium text-violet-300">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#00f5a0]/30 bg-[#00f5a0]/10 px-4 py-1.5 text-xs font-mono font-medium text-[#00f5a0]">
             <Sparkles size={14} />
             <Bi en="Start building your future today" bn="আজই তোমার ভবিষ্যৎ গড়া শুরু করো" />
           </div>
-          <h1 className="max-w-xl text-5xl font-bold leading-[1.15] tracking-tight xl:text-6xl">
+          <h1 className="max-w-xl text-5xl font-extrabold leading-[1.12] tracking-tight xl:text-6xl font-heading">
             <Bi en="Your Future" bn="তোমার ভবিষ্যৎ" />
-            <span className="mt-1 block bg-linear-to-r from-violet-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="mt-1 block gradient-text">
               <Bi en="Starts Here." bn="শুরু এখানেই।" />
             </span>
           </h1>
@@ -307,7 +308,7 @@ export default function SignupPage() {
                   <label htmlFor="password" className="mb-2 block text-sm font-medium text-zinc-300">
                     <Bi en="Password" bn="পাসওয়ার্ড" />
                   </label>
-                  <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.025] px-4 transition focus-within:border-violet-500/60 focus-within:ring-2 focus-within:ring-violet-500/10">
+                  <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#0c101c] px-4 transition focus-within:border-[#00f5a0]/60 focus-within:ring-2 focus-within:ring-[#00f5a0]/10">
                     <LockKeyhole size={18} className="shrink-0 text-zinc-500" />
                     <input
                       id="password"
@@ -319,18 +320,18 @@ export default function SignupPage() {
                       required
                       value={password}
                       onChange={(event) => setPassword(event.target.value)}
-                      className="h-11 w-full bg-transparent text-sm text-white outline-none placeholder:text-zinc-600"
+                      className="h-11 w-full bg-transparent text-sm text-white outline-none placeholder:text-zinc-600 font-sans"
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
                       aria-label={showPassword ? (lang === "bn" ? "পাসওয়ার্ড লুকাও" : "Hide password") : "Show password"}
-                      className="shrink-0 text-zinc-500 transition hover:text-violet-300"
+                      className="shrink-0 text-zinc-500 transition hover:text-[#00f5a0]"
                     >
                       {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                     </button>
                   </div>
-                  <p className="mt-1.5 text-[11px] text-zinc-600">
+                  <p className="mt-1.5 text-[11px] text-zinc-500 font-mono">
                     <Bi en="Use at least 8 characters." bn="কমপক্ষে ৮টি অক্ষর ব্যবহার করো।" />
                   </p>
                 </div>
@@ -338,7 +339,7 @@ export default function SignupPage() {
                   <label htmlFor="confirmPassword" className="mb-2 block text-sm font-medium text-zinc-300">
                     <Bi en="Confirm Password" bn="পাসওয়ার্ড নিশ্চিত করো" />
                   </label>
-                  <div className={`flex items-center gap-3 rounded-xl border bg-white/[0.025] px-4 transition focus-within:ring-2 focus-within:ring-violet-500/10 ${!passwordsMatch ? "border-red-500/50" : "border-white/10 focus-within:border-violet-500/60"}`}>
+                  <div className={`flex items-center gap-3 rounded-xl border bg-[#0c101c] px-4 transition focus-within:ring-2 focus-within:ring-[#00f5a0]/10 ${!passwordsMatch ? "border-red-500/50" : "border-white/10 focus-within:border-[#00f5a0]/60"}`}>
                     <LockKeyhole size={18} className="shrink-0 text-zinc-500" />
                     <input
                       id="confirmPassword"
@@ -348,20 +349,20 @@ export default function SignupPage() {
                       autoComplete="new-password"
                       required
                       value={confirmPassword}
-                      onChange={(event) => setConfirmPassword(event.target.value)}
-                      className="h-11 w-full bg-transparent text-sm text-white outline-none placeholder:text-zinc-600"
+                      onChange={(event) => setConfirmPassword(event.target.checked ? "" : event.target.value)}
+                      className="h-11 w-full bg-transparent text-sm text-white outline-none placeholder:text-zinc-600 font-sans"
                     />
                     <button
                       type="button"
                       onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                       aria-label={showConfirmPassword ? "Hide confirm password" : "Show confirm password"}
-                      className="shrink-0 text-zinc-500 transition hover:text-violet-300"
+                      className="shrink-0 text-zinc-500 transition hover:text-[#00f5a0]"
                     >
                       {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                     </button>
                   </div>
                   {!passwordsMatch && (
-                    <p className="mt-1.5 text-xs text-red-400">
+                    <p className="mt-1.5 text-xs text-red-400 font-mono">
                       <Bi en="Passwords do not match." bn="পাসওয়ার্ড মিলছে না।" />
                     </p>
                   )}
@@ -374,16 +375,16 @@ export default function SignupPage() {
                     required
                     className="sr-only"
                   />
-                  <span className={`mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded border transition ${acceptedTerms ? "border-violet-500 bg-violet-600 text-white" : "border-zinc-700 bg-transparent"}`}>
+                  <span className={`mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded border transition ${acceptedTerms ? "border-[#00f5a0] bg-[#00f5a0] text-black" : "border-zinc-700 bg-transparent"}`}>
                     {acceptedTerms && <Check size={12} />}
                   </span>
                   <span>
                     <Bi en="I agree to the" bn="আমি সম্মত" />{" "}
-                    <Link href="/terms" className="text-violet-400 transition hover:text-violet-300">
+                    <Link href="/terms" className="text-[#00f5a0] transition hover:underline">
                       <Bi en="Terms of Service" bn="Terms of Service" />
                     </Link>{" "}
                     <Bi en="and" bn="ও" />{" "}
-                    <Link href="/privacy" className="text-violet-400 transition hover:text-violet-300">
+                    <Link href="/privacy" className="text-[#00f5a0] transition hover:underline">
                       <Bi en="Privacy Policy" bn="Privacy Policy" />
                     </Link>
                     <Bi en="." bn="-তে সম্মত।" />
@@ -392,7 +393,7 @@ export default function SignupPage() {
                 <button
                   type="submit"
                   disabled={!passwordsMatch}
-                  className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-linear-to-r from-violet-600 to-blue-500 text-sm font-semibold text-white shadow-lg shadow-violet-950/30 transition duration-300 hover:-translate-y-0.5 hover:shadow-violet-500/20 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#00f5a0] to-[#00d2ff] text-xs font-mono font-bold uppercase tracking-wider text-black shadow-lg shadow-[#00f5a0]/20 transition duration-300 hover:shadow-[#00f5a0]/35 hover:scale-[1.01] active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer"
                 >
                   <Bi en="Create Account" bn="অ্যাকাউন্ট খোলো" />
                   <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
@@ -405,9 +406,9 @@ export default function SignupPage() {
                 <div className="h-px flex-1 bg-white/[0.08]" />
               </div>
               <SocialBtn />
-              <p className="mt-7 text-center text-sm text-zinc-500">
+              <p className="mt-7 text-center text-sm text-zinc-400">
                 <Bi en="Already have an account?" bn="আগে থেকেই অ্যাকাউন্ট আছে?" />{" "}
-                <Link href="/login" className="font-semibold text-violet-400 transition hover:text-violet-300">
+                <Link href="/login" className="font-semibold text-[#00f5a0] transition hover:underline">
                   <Bi en="Sign In" bn="সাইন ইন" />
                 </Link>
               </p>

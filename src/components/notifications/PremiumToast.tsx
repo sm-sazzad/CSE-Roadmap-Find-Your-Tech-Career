@@ -65,25 +65,25 @@ const VARIANT_COLORS: Record<
     glow: "shadow-[0_0_24px_rgba(245,158,11,0.10)]",
   },
   info: {
-    text: "text-violet-300",
-    border: "border-violet-500/35",
+    text: "text-cyan-300",
+    border: "border-cyan-400/35",
     badge:
-      "bg-violet-500/15 text-violet-300 border-violet-500/30 shadow-[0_0_20px_rgba(139,92,246,0.18)]",
-    glow: "shadow-[0_0_24px_rgba(139,92,246,0.10)]",
+      "bg-cyan-400/15 text-cyan-300 border-cyan-400/30 shadow-[0_0_20px_rgba(0,210,255,0.18)]",
+    glow: "shadow-[0_0_24px_rgba(0,210,255,0.10)]",
   },
   loading: {
-    text: "text-violet-300",
-    border: "border-violet-500/35",
+    text: "text-[#00f5a0]",
+    border: "border-[#00f5a0]/35",
     badge:
-      "bg-violet-500/15 text-violet-300 border-violet-500/30 shadow-[0_0_20px_rgba(139,92,246,0.18)]",
-    glow: "shadow-[0_0_24px_rgba(139,92,246,0.10)]",
+      "bg-[#00f5a0]/15 text-[#00f5a0] border-[#00f5a0]/30 shadow-[0_0_20px_rgba(0,245,160,0.18)]",
+    glow: "shadow-[0_0_24px_rgba(0,245,160,0.10)]",
   },
   celebration: {
-    text: "text-violet-200",
-    border: "border-violet-400/45",
+    text: "text-emerald-200",
+    border: "border-[#00f5a0]/45",
     badge:
-      "bg-violet-400/20 text-violet-200 border-violet-400/40 shadow-[0_0_28px_rgba(139,92,246,0.25)]",
-    glow: "shadow-[0_0_32px_rgba(139,92,246,0.18)]",
+      "bg-[#00f5a0]/20 text-[#00f5a0] border-[#00f5a0]/40 shadow-[0_0_28px_rgba(0,245,160,0.25)]",
+    glow: "shadow-[0_0_32px_rgba(0,245,160,0.18)]",
   },
 };
 

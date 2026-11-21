@@ -6,7 +6,7 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
+  useSyncExternalStore,
   type ReactNode,
 } from "react";
 
@@ -581,22 +581,54 @@ type Ctx = {
 
 const LanguageContext = createContext<Ctx | null>(null);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(() => {
-    if (typeof window !== "undefined") {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved === "bn" || saved === "en") return saved;
+const listeners = new Set<() => void>();
+
+function emitChange() {
+  for (const listener of listeners) {
+    listener();
+  }
+}
+
+function subscribe(callback: () => void) {
+  listeners.add(callback);
+  const onStorage = (e: StorageEvent) => {
+    if (e.key === STORAGE_KEY) {
+      callback();
     }
-    return "en";
-  });
+  };
+  window.addEventListener("storage", onStorage);
+  return () => {
+    listeners.delete(callback);
+    window.removeEventListener("storage", onStorage);
+  };
+}
+
+function getSnapshot(): Lang {
+  if (typeof window === "undefined") return "en";
+  const saved = localStorage.getItem(STORAGE_KEY);
+  return saved === "bn" ? "bn" : "en";
+}
+
+function getServerSnapshot(): Lang {
+  return "en";
+}
+
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const lang = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
 
   const setLang = useCallback((next: Lang) => {
-    setLangState(next);
-    localStorage.setItem(STORAGE_KEY, next);
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.setItem(STORAGE_KEY, next);
+      } catch {
+        // Ignore quota errors
+      }
+      emitChange();
+    }
   }, []);
 
   const t = useCallback(

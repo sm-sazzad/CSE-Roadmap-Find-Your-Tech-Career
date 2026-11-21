@@ -35,9 +35,10 @@ export default function RoadmapProgress({ slug, items }: Props) {
   const C = 2 * Math.PI * R;
 
   return (
-    <aside className="lg:sticky lg:top-30 lg:mt-12 lg:self-start">
-      <div className="glass overflow-hidden rounded-2xl">
-        <div className="flex items-center gap-4 border-b border-white/6 p-5">
+    <aside className="lg:sticky lg:top-28 lg:mt-10 lg:self-start">
+      <div className="glass overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0c101c]/90 shadow-[0_16px_40px_rgba(0,0,0,0.5)]">
+        {/* Top Header */}
+        <div className="flex items-center gap-4 border-b border-white/[0.07] p-5">
           <svg
             width="56"
             height="56"
@@ -69,26 +70,27 @@ export default function RoadmapProgress({ slug, items }: Props) {
               y="28"
               textAnchor="middle"
               dominantBaseline="middle"
-              fill="#e5e7eb"
-              fontSize="10"
-              fontWeight="600"
-              fillOpacity={pct > 0 ? 1 : 0.45}
+              fill="#ffffff"
+              fontSize="11"
+              fontWeight="700"
+              fontFamily="var(--font-mono), monospace"
+              fillOpacity={pct > 0 ? 1 : 0.6}
               transform="rotate(90 28 28)"
             >
               {num(pct, lang)}%
             </text>
             <defs>
               <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#a78bfa" />
-                <stop offset="100%" stopColor="#38bdf8" />
+                <stop offset="0%" stopColor="#00f5a0" />
+                <stop offset="100%" stopColor="#00d2ff" />
               </linearGradient>
             </defs>
           </svg>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-zinc-500">
+            <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.16em] text-[#00f5a0]">
               {t("prog_t")}
             </p>
-            <p className="mt-1 text-sm font-medium text-zinc-200">
+            <p className="mt-1 text-sm font-bold text-white font-heading">
               {pct === 100 && items.length > 0
                 ? t("prog_done")
                 : t("prog_of", { a: done, b: items.length })}
@@ -96,7 +98,8 @@ export default function RoadmapProgress({ slug, items }: Props) {
           </div>
         </div>
 
-        <ol className="max-h-[52vh] overflow-y-auto p-2">
+        {/* Steps List */}
+        <ol className="max-h-[52vh] overflow-y-auto p-2 no-scrollbar">
           {items.map((item, i) => {
             const isDone = isStepCompleted(item.index);
             const isActive = active === item.index;
@@ -109,19 +112,19 @@ export default function RoadmapProgress({ slug, items }: Props) {
                       .getElementById(`roadmap-step-${item.index}`)
                       ?.scrollIntoView({ behavior: "smooth", block: "start" })
                   }
-                  className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm transition ${
+                  className={`flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-xs transition duration-150 cursor-pointer ${
                     isActive
-                      ? "bg-violet-500/10 text-white"
-                      : "text-zinc-500 hover:bg-white/4 hover:text-zinc-200"
+                      ? "bg-[#00f5a0]/15 text-white font-semibold"
+                      : "text-zinc-400 hover:bg-white/[0.04] hover:text-white"
                   }`}
                 >
                   <span
-                    className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-[11px] font-bold ${
+                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[10px] font-mono font-bold ${
                       isDone
-                        ? "border-emerald-400/50 bg-emerald-400/15 text-emerald-300"
+                        ? "border-[#00f5a0]/60 bg-[#00f5a0]/20 text-[#00f5a0]"
                         : isActive
-                          ? "border-violet-400/60 text-violet-200"
-                          : "border-white/10"
+                          ? "border-[#00f5a0]/60 text-[#00f5a0]"
+                          : "border-white/10 text-zinc-500"
                     }`}
                   >
                     {isDone ? "✓" : num(i + 1, lang)}

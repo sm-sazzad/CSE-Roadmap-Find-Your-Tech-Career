@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_Bengali } from "next/font/google";
+import {
+  Space_Grotesk,
+  Plus_Jakarta_Sans,
+  JetBrains_Mono,
+  Noto_Sans_Bengali,
+} from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,10 +14,32 @@ import ChatWidget from "@/components/chatbot/ChatWidget";
 import { LanguageProvider } from "@/lib/i18n";
 import { ProgressProvider } from "@/lib/progress";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  weight: ["500", "600", "700"],
+  display: "swap",
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
 const bengali = Noto_Sans_Bengali({
   subsets: ["bengali"],
   variable: "--font-bengali",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -27,8 +54,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${bengali.variable}`}>
-      <body>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${spaceGrotesk.variable} ${plusJakarta.variable} ${jetbrainsMono.variable} ${bengali.variable}`}
+    >
+      <body className="antialiased selection:bg-[#00f5a0]/25 selection:text-white">
         <LanguageProvider>
           <ProgressProvider>
             <Navbar />

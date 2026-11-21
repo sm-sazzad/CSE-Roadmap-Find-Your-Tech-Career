@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useLang } from "@/lib/i18n";
 import { useToast } from "@/lib/notifications";
 import { authClient } from "@/lib/auth-client";
@@ -81,11 +81,11 @@ export default function ProfilePage() {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [pendingRemove, setPendingRemove] = useState(false);
 
-  useEffect(() => {
-    if (userName) {
-      setName(userName);
-    }
-  }, [userName]);
+  const [prevUserName, setPrevUserName] = useState(userName);
+  if (userName !== prevUserName) {
+    setPrevUserName(userName);
+    setName(userName);
+  }
 
   if (isPending) {
     return null;
@@ -220,16 +220,16 @@ export default function ProfilePage() {
                 alt={userName || "Profile"}
                 width={128}
                 height={128}
-                className="h-32 w-32 rounded-full border border-violet-500/30 object-cover shadow-[0_0_30px_rgba(139,92,246,0.15)]"
+                className="h-32 w-32 rounded-full border border-[#00f5a0]/40 object-cover shadow-[0_0_30px_rgba(0,245,160,0.18)]"
               />
             ) : (
-              <div className="flex h-32 w-32 items-center justify-center rounded-full border border-violet-500/30 bg-violet-500/10 text-4xl font-semibold uppercase tracking-tight text-violet-300 shadow-[0_0_30px_rgba(139,92,246,0.15)]">
+              <div className="flex h-32 w-32 items-center justify-center rounded-full border border-[#00f5a0]/40 bg-[#00f5a0]/15 text-4xl font-bold font-mono uppercase tracking-tight text-[#00f5a0] shadow-[0_0_30px_rgba(0,245,160,0.18)]">
                 {initialsOf(userName || userEmail)}
               </div>
             )}
             <label
               htmlFor="profile-image"
-              className="absolute bottom-0 right-0 flex h-10 w-10 items-center justify-center rounded-full border border-white bg-violet-600 text-white cursor-pointer transition hover:bg-violet-500 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400"
+              className="absolute bottom-0 right-0 flex h-10 w-10 items-center justify-center rounded-full border border-black bg-[#00f5a0] text-black cursor-pointer transition hover:scale-105"
             >
               <input
                 id="profile-image"
@@ -245,7 +245,7 @@ export default function ProfilePage() {
               <button
                 type="button"
                 onClick={handleRemoveImage}
-                className="absolute top-0 right-0 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-zinc-300 cursor-pointer transition hover:bg-red-500/10 hover:text-red-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
+                className="absolute top-0 right-0 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-black/70 text-zinc-300 cursor-pointer transition hover:bg-red-500/20 hover:text-red-300"
                 aria-label={t("profile_remove")}
               >
                 <X className="w-4 h-4" />
@@ -258,7 +258,7 @@ export default function ProfilePage() {
         <div>
           <label
             htmlFor="profile-name"
-            className="mb-2 block text-sm font-medium text-zinc-300"
+            className="mb-2 block text-xs font-mono font-semibold uppercase tracking-wider text-zinc-400"
           >
             {t("profile_edit_name")}
           </label>
@@ -268,7 +268,7 @@ export default function ProfilePage() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             maxLength={MAX_NAME_LENGTH}
-            className="w-full rounded-xl border border-white/[0.08] bg-white/[0.02] px-4 py-3 text-white placeholder-zinc-600 focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500 transition backdrop-blur-sm"
+            className="w-full rounded-xl border border-white/[0.08] bg-[#0c101c] px-4 py-3 text-white placeholder-zinc-600 focus:border-[#00f5a0]/50 focus:ring-1 focus:ring-[#00f5a0]/50 transition backdrop-blur-sm"
             aria-label={t("profile_edit_name")}
           />
         </div>
@@ -277,7 +277,7 @@ export default function ProfilePage() {
         <div>
           <label
             htmlFor="profile-email"
-            className="mb-2 block text-sm font-medium text-zinc-300"
+            className="mb-2 block text-xs font-mono font-semibold uppercase tracking-wider text-zinc-400"
           >
             {t("profile_email")}
           </label>
@@ -286,7 +286,7 @@ export default function ProfilePage() {
             type="email"
             value={userEmail}
             readOnly
-            className="w-full rounded-xl border border-white/[0.08] bg-white/[0.02] px-4 py-3 text-zinc-400 placeholder-zinc-600 backdrop-blur-sm"
+            className="w-full rounded-xl border border-white/[0.08] bg-[#0c101c] px-4 py-3 text-zinc-400 placeholder-zinc-600 backdrop-blur-sm"
             aria-label={t("profile_email")}
           />
         </div>
@@ -295,7 +295,7 @@ export default function ProfilePage() {
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full rounded-xl border border-violet-500/30 bg-linear-to-r from-violet-600/90 to-indigo-600/90 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_25px_rgba(139,92,246,0.15)] transition duration-300 hover:border-violet-400/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.3)] disabled:opacity-70 disabled:cursor-not-allowed"
+          className="w-full rounded-xl bg-gradient-to-r from-[#00f5a0] to-[#00d2ff] px-6 py-3.5 text-xs font-mono font-bold uppercase tracking-wider text-black shadow-[0_0_20px_rgba(0,245,160,0.3)] transition duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,245,160,0.45)] disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
         >
           {isLoading ? (
             <span className="flex items-center justify-center gap-2">

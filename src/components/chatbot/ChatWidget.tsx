@@ -404,11 +404,11 @@ export default function ChatWidget() {
           onClick={() => setIsOpen((prev) => !prev)}
           aria-label={isOpen ? "Close AI Assistant" : "Open CSE Roadmap AI Assistant"}
           aria-expanded={isOpen}
-          className="group relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-violet-600 via-indigo-600 to-sky-500 text-white shadow-xl shadow-violet-600/30 transition-all duration-300 hover:scale-105 hover:shadow-violet-500/50 active:scale-95 border border-white/20 cursor-pointer"
+          className="group relative flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#00f5a0] to-[#00d2ff] text-black shadow-xl shadow-[#00f5a0]/30 transition-all duration-300 hover:scale-105 hover:shadow-[#00f5a0]/50 active:scale-95 border border-white/20 cursor-pointer"
         >
           <div className="absolute -top-1 -right-1 flex h-4 w-4">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-[#05050a]" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00f5a0] opacity-75" />
+            <span className="relative inline-flex rounded-full h-4 w-4 bg-[#00f5a0] border-2 border-[#05050a]" />
           </div>
 
           {isOpen ? (
@@ -418,8 +418,8 @@ export default function ChatWidget() {
           )}
 
           {!isOpen && (
-            <span className="absolute -top-10 right-0 hidden whitespace-nowrap rounded-lg border border-white/10 bg-[#0d0c1d]/90 px-3 py-1 text-xs font-medium text-violet-200 backdrop-blur-md shadow-lg group-hover:block transition-all pointer-events-none">
-              Roadmap Assistant ✨
+            <span className="absolute -top-10 right-0 hidden whitespace-nowrap rounded-lg border border-white/10 bg-[#090d18]/90 px-3 py-1 text-xs font-mono font-medium text-[#00f5a0] backdrop-blur-md shadow-lg group-hover:block transition-all pointer-events-none">
+              Roadmap Copilot ✨
             </span>
           )}
         </button>
@@ -439,7 +439,7 @@ export default function ChatWidget() {
         <aside
           role="dialog"
           aria-label="CSE Roadmap AI Assistant"
-          className="fixed inset-x-0 bottom-0 top-14 z-[60] flex flex-col rounded-t-3xl border border-white/10 bg-[#090814]/95 shadow-2xl backdrop-blur-2xl sm:inset-auto sm:bottom-24 sm:right-6 sm:h-[580px] sm:w-[410px] sm:rounded-2xl overflow-hidden text-zinc-100 animate-in fade-in slide-in-from-bottom-4 duration-300"
+          className="fixed inset-x-0 bottom-0 top-14 z-[60] flex flex-col rounded-t-3xl border border-white/[0.09] bg-[#070a12]/98 shadow-2xl backdrop-blur-2xl sm:inset-auto sm:bottom-24 sm:right-6 sm:h-[580px] sm:w-[410px] sm:rounded-2xl overflow-hidden text-zinc-100 animate-in fade-in slide-in-from-bottom-4 duration-300"
         >
           {showQuiz && (
             <CareerQuizWizard
@@ -452,20 +452,20 @@ export default function ChatWidget() {
           )}
 
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-white/[0.08] bg-white/[0.02] px-4 py-3.5 sm:px-5">
+          <div className="flex items-center justify-between border-b border-white/[0.08] bg-[#0c101c] px-4 py-3.5 sm:px-5">
             <div className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500/20 to-sky-500/10 border border-violet-500/30 text-violet-300">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#00f5a0]/15 border border-[#00f5a0]/30 text-[#00f5a0]">
                 <Bot className="h-5 w-5" />
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
-                  <h2 className="text-sm font-bold tracking-tight text-white">
-                    CSE Roadmap Assistant
+                  <h2 className="text-sm font-bold tracking-tight text-white font-heading">
+                    CSE Roadmap Copilot
                   </h2>
-                  <Sparkles className="h-3.5 w-3.5 text-amber-300" />
+                  <Sparkles className="h-3.5 w-3.5 text-[#00f5a0]" />
                 </div>
-                <div className="flex items-center gap-1.5 text-[11px] text-zinc-400">
-                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <div className="flex items-center gap-1.5 text-[11px] font-mono text-zinc-400">
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#00f5a0]" />
                   <span>
                     Online
                     {currentSector ? ` • ${currentSector.name}` : ""}
@@ -480,9 +480,9 @@ export default function ChatWidget() {
                 onClick={() => setShowQuiz(true)}
                 title="Career Matcher Quiz"
                 aria-label="Career Matcher Quiz"
-                className="flex items-center gap-1 rounded-lg px-2 py-1 text-xs text-violet-300 hover:bg-violet-500/20 hover:text-white transition cursor-pointer"
+                className="flex items-center gap-1 rounded-lg px-2 py-1 text-xs text-[#00f5a0] hover:bg-[#00f5a0]/15 transition cursor-pointer"
               >
-                <Target className="h-3.5 w-3.5 text-violet-400" />
+                <Target className="h-3.5 w-3.5 text-[#00f5a0]" />
                 <span className="text-[11px] font-medium hidden sm:inline">কুইজ</span>
               </button>
               {messages.length > 0 && (
@@ -514,10 +514,10 @@ export default function ChatWidget() {
             {/* Empty State */}
             {messages.length === 0 && (
               <div className="flex flex-col items-center justify-center text-center py-4 px-2">
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-tr from-violet-600/20 to-sky-500/20 border border-violet-500/30 text-violet-300 shadow-inner">
-                  <Sparkles className="h-6 w-6 text-violet-400" />
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#00f5a0]/15 border border-[#00f5a0]/30 text-[#00f5a0] shadow-inner">
+                  <Sparkles className="h-6 w-6 text-[#00f5a0]" />
                 </div>
-                <h3 className="font-semibold text-white text-base">
+                <h3 className="font-bold text-white text-base font-heading">
                   স্বাগতম! কীভাবে সাহায্য করতে পারি?
                 </h3>
                 <p className="mt-1 text-xs text-zinc-400 max-w-[320px] leading-relaxed">
@@ -526,29 +526,29 @@ export default function ChatWidget() {
 
                 {/* Page Context Badge */}
                 {currentSector ? (
-                  <div className="mt-3.5 flex items-center gap-2 rounded-xl border border-violet-500/30 bg-violet-500/10 px-3 py-1.5 text-xs text-violet-200">
+                  <div className="mt-3.5 flex items-center gap-2 rounded-xl border border-[#00f5a0]/30 bg-[#00f5a0]/10 px-3 py-1.5 text-xs text-[#00f5a0]">
                     <span className="text-sm">{currentSector.icon || "📍"}</span>
-                    <span className="font-medium text-white">{currentSector.name}</span>
+                    <span className="font-semibold text-white">{currentSector.name}</span>
                     <span className="text-[11px] text-zinc-400">রোডম্যাপে আছেন</span>
                   </div>
                 ) : pathname === "/sector" ? (
-                  <div className="mt-3.5 flex items-center gap-2 rounded-xl border border-violet-500/30 bg-violet-500/10 px-3 py-1.5 text-xs text-violet-200">
+                  <div className="mt-3.5 flex items-center gap-2 rounded-xl border border-[#00f5a0]/30 bg-[#00f5a0]/10 px-3 py-1.5 text-xs text-[#00f5a0]">
                     <span>🧭</span>
-                    <span className="font-medium text-white">সেক্টর ডিরেক্টরি</span>
+                    <span className="font-semibold text-white">সেক্টর ডিরেক্টরি</span>
                     <span className="text-[11px] text-zinc-400">ব্রাউজ করছেন</span>
                   </div>
                 ) : null}
 
                 {/* Career Matcher Quiz Card */}
-                <div className="w-full mt-4 p-3 rounded-2xl bg-gradient-to-r from-violet-600/25 via-indigo-600/20 to-sky-500/10 border border-violet-500/35 flex items-center justify-between gap-3 text-left shadow-lg shadow-violet-950/40">
+                <div className="w-full mt-4 p-3.5 rounded-2xl bg-gradient-to-r from-[#00f5a0]/15 via-[#00d2ff]/10 to-transparent border border-[#00f5a0]/30 flex items-center justify-between gap-3 text-left shadow-lg">
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-600/30 border border-violet-400/40 text-violet-300">
-                      <Target className="h-5 w-5 text-violet-300" />
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#00f5a0]/20 border border-[#00f5a0]/30 text-[#00f5a0]">
+                      <Target className="h-5 w-5 text-[#00f5a0]" />
                     </div>
                     <div className="min-w-0">
-                      <h4 className="text-xs font-bold text-white flex items-center gap-1.5">
+                      <h4 className="text-xs font-bold text-white flex items-center gap-1.5 font-heading">
                         <span>Career Matcher Quiz</span>
-                        <span className="text-[9px] font-semibold px-1.5 py-0.5 rounded-full bg-violet-500/30 text-violet-200 border border-violet-400/20">
+                        <span className="text-[9px] font-mono font-bold px-1.5 py-0.5 rounded-full bg-[#00f5a0]/20 text-[#00f5a0] border border-[#00f5a0]/30">
                           ৪টি প্রশ্ন
                         </span>
                       </h4>
@@ -560,7 +560,7 @@ export default function ChatWidget() {
                   <button
                     type="button"
                     onClick={() => setShowQuiz(true)}
-                    className="shrink-0 px-3 py-1.5 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-xs font-semibold transition cursor-pointer flex items-center gap-1 shadow-md shadow-violet-600/40 active:scale-95"
+                    className="shrink-0 px-3 py-1.5 rounded-xl bg-gradient-to-r from-[#00f5a0] to-[#00d2ff] text-black text-xs font-bold transition cursor-pointer flex items-center gap-1 shadow-md shadow-[#00f5a0]/20 hover:scale-105 active:scale-95"
                   >
                     <span>কুইজ</span>
                     <ArrowRight className="h-3 w-3" />
@@ -569,7 +569,7 @@ export default function ChatWidget() {
 
                 {/* Starter Prompt Chips */}
                 <div className="mt-5 w-full flex flex-col gap-2 text-left">
-                  <span className="text-[11px] font-medium uppercase tracking-wider text-zinc-500 px-1">
+                  <span className="text-[11px] font-mono font-semibold uppercase tracking-wider text-zinc-500 px-1">
                     {currentSector
                       ? `${currentSector.name} সংক্রান্ত প্রশ্ন`
                       : "পরামর্শ / Suggested questions"}
@@ -580,10 +580,10 @@ export default function ChatWidget() {
                       type="button"
                       onClick={() => handleStarterClick(promptText)}
                       disabled={isBusy}
-                      className="group flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.02] p-2.5 text-xs text-zinc-300 transition duration-200 hover:border-violet-500/40 hover:bg-violet-500/10 hover:text-white text-left cursor-pointer disabled:cursor-not-allowed"
+                      className="group flex items-center justify-between rounded-xl border border-white/[0.08] bg-[#0c101c] p-2.5 text-xs text-zinc-300 transition duration-200 hover:border-[#00f5a0]/40 hover:bg-[#00f5a0]/10 hover:text-white text-left cursor-pointer disabled:cursor-not-allowed"
                     >
                       <span>{promptText}</span>
-                      <Send className="h-3 w-3 opacity-0 group-hover:opacity-100 group-hover:text-violet-400 transition ml-2 shrink-0" />
+                      <Send className="h-3 w-3 opacity-0 group-hover:opacity-100 group-hover:text-[#00f5a0] transition ml-2 shrink-0" />
                     </button>
                   ))}
                 </div>
@@ -608,8 +608,8 @@ export default function ChatWidget() {
                   <div
                     className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-xs ${
                       isUser
-                        ? "bg-violet-600 text-white"
-                        : "bg-white/[0.06] border border-white/10 text-violet-300"
+                        ? "bg-[#00f5a0] text-black font-bold"
+                        : "bg-[#00f5a0]/15 border border-[#00f5a0]/30 text-[#00f5a0]"
                     }`}
                   >
                     {isUser ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
@@ -619,8 +619,8 @@ export default function ChatWidget() {
                   <div
                     className={`rounded-2xl px-3.5 py-2.5 max-w-[85%] text-xs leading-relaxed break-words ${
                       isUser
-                        ? "bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-tr-xs shadow-md"
-                        : "bg-white/[0.04] border border-white/[0.08] text-zinc-200 rounded-tl-xs shadow-sm"
+                        ? "bg-gradient-to-r from-[#00f5a0] to-[#00d2ff] text-black font-semibold rounded-tr-xs shadow-md"
+                        : "bg-[#0c101c] border border-white/[0.08] text-zinc-200 rounded-tl-xs shadow-sm"
                     }`}
                   >
                     {isUser ? (
@@ -815,7 +815,7 @@ export default function ChatWidget() {
                   rows={2}
                   maxLength={MAX_CHAR_LIMIT}
                   disabled={isBusy}
-                  className="w-full resize-none rounded-xl border border-white/[0.1] bg-black/40 px-3.5 py-2.5 pr-20 text-xs text-white placeholder-zinc-500 focus:border-violet-500/50 focus:outline-none focus:ring-1 focus:ring-violet-500/50 disabled:opacity-50 transition"
+                  className="w-full resize-none rounded-xl border border-white/[0.1] bg-black/40 px-3.5 py-2.5 pr-20 text-xs text-white placeholder-zinc-500 focus:border-[#00f5a0]/50 focus:outline-none focus:ring-1 focus:ring-[#00f5a0]/50 disabled:opacity-50 transition"
                 />
 
                 <div className="absolute right-2.5 bottom-2.5 flex items-center gap-1.5">
@@ -862,7 +862,7 @@ export default function ChatWidget() {
                       disabled={!input.trim()}
                       title="Send message"
                       aria-label="Send message"
-                      className="flex h-7 w-7 items-center justify-center rounded-lg bg-violet-600 text-white hover:bg-violet-500 disabled:opacity-40 disabled:hover:bg-violet-600 transition shadow cursor-pointer disabled:cursor-not-allowed"
+                      className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-r from-[#00f5a0] to-[#00d2ff] text-black font-bold disabled:opacity-40 transition shadow cursor-pointer disabled:cursor-not-allowed"
                     >
                       <Send className="h-3.5 w-3.5" />
                     </button>
@@ -890,7 +890,7 @@ export default function ChatWidget() {
                         onClick={() => handleVoiceLangChange("bn-BD")}
                         className={`px-1.5 py-0.5 rounded text-[10px] font-semibold transition cursor-pointer ${
                           voiceLang === "bn-BD"
-                            ? "bg-violet-600 text-white"
+                            ? "bg-[#00f5a0] text-black"
                             : "text-zinc-400 hover:text-white"
                         }`}
                       >
@@ -901,7 +901,7 @@ export default function ChatWidget() {
                         onClick={() => handleVoiceLangChange("en-US")}
                         className={`px-1.5 py-0.5 rounded text-[10px] font-semibold transition cursor-pointer ${
                           voiceLang === "en-US"
-                            ? "bg-violet-600 text-white"
+                            ? "bg-[#00f5a0] text-black"
                             : "text-zinc-400 hover:text-white"
                         }`}
                       >

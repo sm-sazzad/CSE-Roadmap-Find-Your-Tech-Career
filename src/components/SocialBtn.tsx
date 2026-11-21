@@ -44,9 +44,9 @@ const SocialBtn = () => {
         onClick={() => handleSocialSignIn("google")}
         disabled={loading === "google"}
         type="button"
-        className={`flex h-11 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.025] text-sm text-zinc-300 transition cursor-pointer hover:border-violet-500/30 hover:bg-white/[0.05] disabled:opacity-50 disabled:cursor-not-allowed`}
+        className={`flex h-11 items-center justify-center gap-2 rounded-xl border border-white/10 bg-[#0c101c] text-xs font-mono font-medium text-zinc-300 transition cursor-pointer hover:border-[#00f5a0]/40 hover:bg-[#00f5a0]/[0.05] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed`}
       >
-        <span className="text-base font-bold">G</span>
+        <span className="text-base font-bold text-[#00f5a0]">G</span>
         <span>{lang === "bn" ? providerLabel.google.bn : providerLabel.google.en}</span>
       </button>
 
@@ -54,9 +54,9 @@ const SocialBtn = () => {
         onClick={() => handleSocialSignIn("github")}
         disabled={loading === "github"}
         type="button"
-        className={`flex h-11 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.025] text-sm text-zinc-300 transition cursor-pointer hover:border-violet-500/30 hover:bg-white/[0.05] disabled:opacity-50 disabled:cursor-not-allowed`}
+        className={`flex h-11 items-center justify-center gap-2 rounded-xl border border-white/10 bg-[#0c101c] text-xs font-mono font-medium text-zinc-300 transition cursor-pointer hover:border-[#00f5a0]/40 hover:bg-[#00f5a0]/[0.05] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed`}
       >
-        <span className="text-base font-bold">GH</span>
+        <span className="text-base font-bold text-[#00d2ff]">GH</span>
         <span>{lang === "bn" ? providerLabel.github.bn : providerLabel.github.en}</span>
       </button>
     </div>

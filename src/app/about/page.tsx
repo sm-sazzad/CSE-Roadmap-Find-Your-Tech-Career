@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BookOpen, Check, Globe2 } from "lucide-react";
 import Bi from "@/components/Bi";
 // import profile from "@/assets/profile.png";
 // import backdrop from "@/assets/backdrop.jpg";
@@ -101,7 +102,7 @@ const TECH_STACK = [
 
 const Page = () => {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#0f172a] mt-20 md:mt-0">
+    <main className="relative min-h-screen overflow-hidden bg-[#06080e] mt-20 md:mt-0">
       {/* Backdrop */}
 
       <div className="absolute inset-0" aria-hidden="true">
@@ -112,24 +113,24 @@ const Page = () => {
           alt=""
           fill
           priority
-          className="object-cover object-[73%_center] sm:object-[84%_center]"
+          className="object-cover object-[73%_center] sm:object-[84%_center] opacity-40"
         />
 
         {/* Horizontal gradient */}
-        <div className="absolute inset-0 bg-linear-to-r from-[#0f172a] via-[#0f172a]/85 to-[#0f172a]/40 md:via-[#0f172a]/95 md:to-[#0f172a]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06080e] via-[#06080e]/90 to-[#06080e]/50 md:via-[#06080e]/95 md:to-[#06080e]/70" />
 
         {/* Vertical gradient */}
-        <div className="absolute inset-0 bg-linear-to-t from-[#0f172a] via-[#0f172a]/15 to-[#0f172a]/75 md:via-[#0f172a]/30 md:to-[#0f172a]/85" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#06080e] via-[#06080e]/30 to-[#06080e]/85 md:via-[#06080e]/40 md:to-[#06080e]/90" />
       </div>
 
       {/* Decorative glows */}
       <div
-        className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-indigo-500/10 blur-3xl"
+        className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#00f5a0]/10 blur-3xl"
         aria-hidden="true"
       />
 
       <div
-        className="pointer-events-none absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-violet-500/10 blur-3xl"
+        className="pointer-events-none absolute -right-40 bottom-20 h-96 w-96 rounded-full bg-[#00d2ff]/10 blur-3xl"
         aria-hidden="true"
       />
 
@@ -141,19 +142,19 @@ const Page = () => {
           className="mb-16 lg:mb-20 mx-auto w-[90%]"
         >
           <div className="mx-auto max-w-3xl text-center sm:text-left lg:max-w-none">
-            <p className="text-lg font-semibold uppercase tracking-[0.2em] text-violet-400 mb-6">
+            <p className="text-xs font-mono font-semibold uppercase tracking-[0.2em] text-[#00f5a0] mb-6">
               <Bi en="About CodePath" bn="CodePath সম্পর্কে" />
             </p>
             <h2
               id="about-codepath-heading"
-              className="text-3xl font-bold leading-tight text-white sm:text-5xl mb-8 sm:mb-10"
+              className="text-3xl font-extrabold leading-tight text-white sm:text-5xl mb-8 sm:mb-10 font-heading"
             >
               <Bi
                 en="Free, guided roadmaps for every CSE career"
                 bn="প্রতিটি CSE ক্যারিয়ারের জন্য ফ্রি, গাইডেড রোডম্যাপ"
               />
             </h2>
-            <p className="text-lg leading-8 text-zinc-400 mb-12 sm:mb-14 max-w-lg sm:max-w-none">
+            <p className="text-base leading-8 text-zinc-400 mb-12 sm:mb-14 max-w-lg sm:max-w-none">
               <Bi
                 en="CodePath helps CSE students and aspiring tech professionals learn in the right order. Pick a career path, follow curated steps, track your progress, and build real projects — all for free, in English or Bangla."
                 bn="CodePath CSE শিক্ষার্থী এবং আত্মবিশ্বাসী টেক পেশাদারদের সঠিক ক্রমে শিখতে সাহায্য করে। একটি ক্যারিয়ার পথ বেছে নাও, কিউরেট করা ধাপগুলো অনুসরণ করো, অগ্রগতি ট্র্যাক করো এবং বাস্তব প্রজেক্ট বানাও — সবকিছু ফ্রি, ইংরেজি ও বাংলায়।"
@@ -161,11 +162,11 @@ const Page = () => {
             </p>
 
             {/* Problem */}
-            <div className="glass rounded-2xl border border-white/[0.08] p-6 sm:p-8 mb-12 sm:mb-14">
-              <h3 className="text-sm font-semibold text-white mb-4">
+            <div className="glass rounded-2xl border border-white/[0.08] bg-[#0c101c] p-6 sm:p-8 mb-12 sm:mb-14">
+              <h3 className="text-sm font-bold text-white mb-4 font-heading">
                 <Bi en="The problem" bn="সমস্যাটি" />
               </h3>
-              <p className="text-zinc-400 leading-7">
+              <p className="text-zinc-400 leading-7 text-sm">
                 <Bi
                   en="There are hundreds of tutorials and thousands of tools, but no clear order to follow. Learners waste time jumping between random videos instead of building real skills."
                   bn="শত শত টিউটোরিয়াল এবং হাজারো টুল থাকলেও কোনো পরিষ্কার ক্রম নেই। শিক্ষার্থীরা এলোমেলো ভিডিও দেখার মধ্যে সময় নষ্ট করে বাস্তব দক্ষতা গড়ার বদলে।"
@@ -175,11 +176,11 @@ const Page = () => {
 
             {/* Features */}
             <div className="grid gap-6 sm:gap-8 lg:grid-cols-3 mb-12 sm:mb-14">
-              <div className="glass rounded-2xl p-6 sm:p-8">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/10 text-violet-300 mb-5 sm:mb-6">
-                  ✓
+              <div className="glass-card rounded-2xl border border-white/[0.08] bg-[#0c101c] p-6 sm:p-8">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#00f5a0]/15 text-[#00f5a0] mb-5 sm:mb-6">
+                  <Check className="h-5 w-5" />
                 </div>
-                <h4 className="text-sm font-semibold text-white mb-3 sm:mb-4">
+                <h4 className="text-base font-bold text-white mb-3 sm:mb-4 font-heading">
                   <Bi en="Track your progress" bn="অগ্রগতি ট্র্যাক করো" />
                 </h4>
                 <p className="text-sm text-zinc-400 leading-6">
@@ -189,11 +190,11 @@ const Page = () => {
                   />
                 </p>
               </div>
-              <div className="glass rounded-2xl p-6 sm:p-8">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/10 text-violet-300 mb-5 sm:mb-6">
-                  📚
+              <div className="glass-card rounded-2xl border border-white/[0.08] bg-[#0c101c] p-6 sm:p-8">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#00d2ff]/15 text-[#00d2ff] mb-5 sm:mb-6">
+                  <BookOpen className="h-5 w-5" />
                 </div>
-                <h4 className="text-sm font-semibold text-white mb-3 sm:mb-4">
+                <h4 className="text-base font-bold text-white mb-3 sm:mb-4 font-heading">
                   <Bi
                     en="Free resources &amp; projects"
                     bn="ফ্রি রিসোর্স ও প্রজেক্ট"
@@ -206,11 +207,11 @@ const Page = () => {
                   />
                 </p>
               </div>
-              <div className="glass rounded-2xl p-6 sm:p-8">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/10 text-violet-300 mb-5 sm:mb-6">
-                  🌐
+              <div className="glass-card rounded-2xl border border-white/[0.08] bg-[#0c101c] p-6 sm:p-8">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-400/15 text-amber-400 mb-5 sm:mb-6">
+                  <Globe2 className="h-5 w-5" />
                 </div>
-                <h4 className="text-sm font-semibold text-white mb-3 sm:mb-4">
+                <h4 className="text-base font-bold text-white mb-3 sm:mb-4 font-heading">
                   <Bi en="English and Bangla" bn="ইংরেজি ও বাংলা" />
                 </h4>
                 <p className="text-sm text-zinc-400 leading-6">
@@ -226,7 +227,7 @@ const Page = () => {
             <div className="pt-6 sm:pt-8">
               <Link
                 href="/sector"
-                className="inline-flex items-center gap-2 rounded-xl bg-linear-to-r from-violet-500 to-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_40px_rgba(124,58,237,0.35)] transition hover:-translate-y-0.5 sm:px-7 sm:py-3.5"
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#00f5a0] to-[#00d2ff] px-6 py-3.5 text-xs font-mono font-bold uppercase tracking-wider text-black shadow-[0_0_20px_rgba(0,245,160,0.3)] transition hover:scale-105 hover:shadow-[0_0_30px_rgba(0,245,160,0.45)] sm:px-7"
               >
                 <Bi en="Explore roadmaps" bn="রোডম্যাপ দেখো" />
                 <span className="transition group-hover:translate-x-1">→</span>
@@ -247,10 +248,10 @@ const Page = () => {
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
             {/* Section Header */}
             <div className="mb-12 text-center sm:mb-16 lg:mb-20">
-              <p className="text-lg font-bold uppercase tracking-[0.3em] text-violet-400">
+              <p className="text-xs font-mono font-bold uppercase tracking-[0.3em] text-[#00f5a0]">
                 <Bi en="About the Developer" bn="ডেভেলপারের সম্পর্কে" />
               </p>
-              <div className="mx-auto mt-4 h-1 w-16 rounded-full bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-500" />
+              <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-gradient-to-r from-[#00f5a0] to-[#00d2ff]" />
             </div>
 
             {/* Profile + About Grid */}
@@ -260,13 +261,13 @@ const Page = () => {
                 {/* Profile Image */}
                 <div className="group relative shrink-0">
                   {/* Animated Glow */}
-                  <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-indigo-500 via-violet-500 to-purple-500 opacity-60 blur-xl transition duration-700 group-hover:opacity-100 group-hover:blur-2xl" />
+                  <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-[#00f5a0] to-[#00d2ff] opacity-40 blur-xl transition duration-700 group-hover:opacity-75 group-hover:blur-2xl" />
 
                   {/* Rotating Border */}
-                  <div className="absolute -inset-1.5 rounded-full bg-[conic-gradient(from_0deg,#6366f1,#8b5cf6,#a855f7,#6366f1)] opacity-90 motion-safe:animate-[spin_8s_linear_infinite]" />
+                  <div className="absolute -inset-1.5 rounded-full bg-[conic-gradient(from_0deg,#00f5a0,#00d2ff,#a78bfa,#00f5a0)] opacity-90 motion-safe:animate-[spin_10s_linear_infinite]" />
 
                   {/* Image */}
-                  <div className="relative h-52 w-52 overflow-hidden rounded-full border-4 border-[#0f172a] shadow-2xl sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-64 lg:w-64 xl:h-80 xl:w-80">
+                  <div className="relative h-52 w-52 overflow-hidden rounded-full border-4 border-[#06080e] shadow-2xl sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-64 lg:w-64 xl:h-80 xl:w-80">
                     <Image
                       src="https://i.pinimg.com/736x/51/22/16/51221635a0075b57c01c2b303f4fdd4c.jpg"
                       alt="Portrait of Sheikh Md Sazzad Hossain"
@@ -283,8 +284,8 @@ const Page = () => {
                     role="status"
                     aria-label="Available for opportunities"
                   >
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 motion-safe:animate-ping" />
-                    <span className="relative h-3.5 w-3.5 rounded-full bg-green-500 ring-4 ring-[#0f172a]" />
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-[#00f5a0] opacity-75 motion-safe:animate-ping" />
+                    <span className="relative h-3.5 w-3.5 rounded-full bg-[#00f5a0] ring-4 ring-[#06080e]" />
                   </div>
                 </div>
 
@@ -292,16 +293,16 @@ const Page = () => {
                 <div className="mt-8 w-full min-w-0 sm:mt-10">
                   <h1
                     id="about-heading"
-                    className="bg-gradient-to-r from-white via-white to-slate-400 bg-clip-text text-3xl font-extrabold leading-tight tracking-tight text-transparent sm:text-4xl md:text-4xl"
+                    className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl md:text-4xl font-heading"
                   >
                     Sheikh Md Sazzad Hossain
                   </h1>
 
                   <p className="mt-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-sm font-medium leading-7 text-slate-300 sm:text-base lg:justify-start xl:text-lg">
                     <Bi en="Web Developer" bn="ওয়েব ডেভেলপার" />
-                    <span className="text-indigo-400">•</span>
+                    <span className="text-[#00f5a0]">•</span>
                     <Bi en="CSE Student" bn="CSE শিক্ষার্থী" />
-                    <span className="text-indigo-400">•</span>
+                    <span className="text-[#00f5a0]">•</span>
                     <Bi
                       en="Future Software Engineer"
                       bn="ভবিষ্যৎ সফটওয়্যার ইঞ্জিনিয়ার"
@@ -321,7 +322,7 @@ const Page = () => {
                       href="https://mail.google.com/mail/?view=cm&fs=1&to=sazzadhossain5758@gmail.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/30 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-400 sm:px-6"
+                      className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#00f5a0] to-[#00d2ff] px-6 py-3 text-xs font-mono font-bold uppercase tracking-wider text-black shadow-lg shadow-[#00f5a0]/20 transition duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#00f5a0]/35"
                     >
                       <Bi en="Get In Touch" bn="যোগাযোগ করুন" />
                     </a>
@@ -330,7 +331,7 @@ const Page = () => {
                       href="https://github.com/sm-sazzad"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-400 sm:px-6"
+                      className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-xs font-mono font-semibold uppercase tracking-wider text-white backdrop-blur-sm transition duration-300 hover:bg-white/10 hover:border-white/30"
                     >
                       <Bi en="View GitHub" bn="GitHub দেখুন" />
                     </a>
@@ -341,15 +342,15 @@ const Page = () => {
               {/* About */}
               <div className="min-w-0 text-white">
                 {/* Label */}
-                <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-300 backdrop-blur-sm sm:tracking-[0.25em]">
-                  <span className="h-2 w-2 rounded-full bg-indigo-400" />
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#00f5a0]/30 bg-[#00f5a0]/10 px-4 py-1.5 text-xs font-mono font-semibold uppercase tracking-[0.2em] text-[#00f5a0] backdrop-blur-sm">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#00f5a0]" />
                   <Bi en="About Me" bn="আমার সম্পর্কে" />
                 </span>
 
                 {/* Large Heading */}
-                <h2 className="mt-6 text-4xl font-extrabold leading-[1.2] tracking-tight">
+                <h2 className="mt-6 text-4xl font-extrabold leading-[1.2] tracking-tight font-heading">
                   <Bi en="Turning ideas into" bn="ভাবনাকে রূপ দিচ্ছি" />{" "}
-                  <span className="bg-linear-to-r from-indigo-400 via-violet-500 to-purple-500 bg-clip-text text-transparent">
+                  <span className="gradient-text">
                     <Bi en="real-world projects." bn="বাস্তব প্রজেক্টে।" />
                   </span>
                 </h2>

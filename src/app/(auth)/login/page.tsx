@@ -66,29 +66,30 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#070710] text-white">
+    <main className="relative min-h-screen overflow-hidden bg-[#06080e] text-white">
       {/* Background glow */}
-      <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-violet-600/15 blur-[130px]" />
-      <div className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-blue-600/15 blur-[130px]" />
+      <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-[#00f5a0]/10 blur-[140px]" />
+      <div className="pointer-events-none absolute -bottom-40 right-0 h-96 w-96 rounded-full bg-[#00d2ff]/10 blur-[140px]" />
+      <div className="grid-mesh absolute inset-0 opacity-40 pointer-events-none" />
 
       {/* Header */}
       <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-8 lg:px-12">
         <Link href="/" className="group flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-violet-400/20 bg-violet-500/10 text-violet-300 transition duration-300 group-hover:scale-105 group-hover:bg-violet-500/20">
-            <Code2 size={25} />
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/[0.1] bg-[#0d1220] text-[#00f5a0] shadow-[0_0_20px_rgba(0,245,160,0.15)] transition duration-300 group-hover:scale-105 group-hover:border-[#00f5a0]/40">
+            <Code2 size={24} />
           </div>
           <div>
-            <p className="text-lg font-bold tracking-tight">
-              CSE <span className="text-violet-400">Roadmap</span>
+            <p className="text-lg font-bold tracking-tight font-heading">
+              Code<span className="text-[#00f5a0]">Path</span>
             </p>
-            <p className="text-xs text-zinc-500"><Bi en="Find Your Tech Career" bn="তোমার টেক ক্যারিয়ার খুঁজে নাও" /></p>
+            <p className="text-xs text-zinc-500 font-mono"><Bi en="Zero-to-Hero Tech Career" bn="তোমার টেক ক্যারিয়ার রোডম্যাপ" /></p>
           </div>
         </Link>
         <Link
           href="/"
-          className="flex items-center gap-2 text-sm text-zinc-400 transition hover:text-white"
+          className="flex items-center gap-2 text-xs font-mono text-zinc-400 transition hover:text-white"
         >
-          <ArrowLeft size={16} />
+          <ArrowLeft size={14} />
           <span><Bi en="Back to Home" bn="হোমে ফিরে যাও" /></span>
         </Link>
       </header>
@@ -102,13 +103,13 @@ export default function LoginPage() {
           transition={{ duration: 0.7 }}
           className="hidden lg:block"
         >
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-violet-400/15 bg-violet-500/[0.07] px-4 py-2 text-xs font-medium text-violet-300">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#00f5a0]/30 bg-[#00f5a0]/10 px-4 py-1.5 text-xs font-mono font-medium text-[#00f5a0]">
             <Sparkles size={14} />
             <Bi en="Your journey into tech starts here" bn="টেক জগতে তোমার যাত্রা শুরু এখানে" />
           </div>
-          <h1 className="max-w-xl text-5xl font-bold leading-[1.15] tracking-tight xl:text-6xl">
+          <h1 className="max-w-xl text-5xl font-extrabold leading-[1.12] tracking-tight xl:text-6xl font-heading">
             <Bi en="Build Your" bn="গড়ে তোলো তোমার" />
-            <span className="mt-1 block bg-linear-to-r from-violet-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="mt-1 block gradient-text">
               <Bi en="Tech Career" bn="টেক ক্যারিয়ার" />
             </span>
             <Bi en="with Clarity." bn="স্পষ্টতার সাথে।" />
@@ -224,7 +225,7 @@ export default function LoginPage() {
                   <label htmlFor="email" className="mb-2 block text-sm font-medium text-zinc-300">
                     <Bi en="Email Address" bn="ইমেইল ঠিকানা" />
                   </label>
-                  <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.025] px-4 transition focus-within:border-violet-500/60 focus-within:ring-2 focus-within:ring-violet-500/10">
+                  <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#0c101c] px-4 transition focus-within:border-[#00f5a0]/60 focus-within:ring-2 focus-within:ring-[#00f5a0]/10">
                     <Mail size={18} className="shrink-0 text-zinc-500" />
                     <input
                       id="email"
@@ -233,7 +234,7 @@ export default function LoginPage() {
                       placeholder={lang === "bn" ? "তোমার ইমেইল ঠিকানা লেখো" : "Enter your email address"}
                       autoComplete="email"
                       required
-                      className="h-12 w-full bg-transparent text-sm text-white outline-none placeholder:text-zinc-600"
+                      className="h-12 w-full bg-transparent text-sm text-white outline-none placeholder:text-zinc-600 font-sans"
                     />
                   </div>
                 </div>
@@ -241,7 +242,7 @@ export default function LoginPage() {
                   <label htmlFor="password" className="mb-2 block text-sm font-medium text-zinc-300">
                     <Bi en="Password" bn="পাসওয়ার্ড" />
                   </label>
-                  <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.025] px-4 transition focus-within:border-violet-500/60 focus-within:ring-2 focus-within:ring-violet-500/10">
+                  <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#0c101c] px-4 transition focus-within:border-[#00f5a0]/60 focus-within:ring-2 focus-within:ring-[#00f5a0]/10">
                     <LockKeyhole size={18} className="shrink-0 text-zinc-500" />
                     <input
                       id="password"
@@ -250,13 +251,13 @@ export default function LoginPage() {
                       placeholder={lang === "bn" ? "তোমার পাসওয়ার্ড লেখো" : "Enter your password"}
                       autoComplete="current-password"
                       required
-                      className="h-12 w-full bg-transparent text-sm text-white outline-none placeholder:text-zinc-600"
+                      className="h-12 w-full bg-transparent text-sm text-white outline-none placeholder:text-zinc-600 font-sans"
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
                       aria-label={showPassword ? (lang === "bn" ? "পাসওয়ার্ড লুকাও" : "Hide password") : "Show password"}
-                      className="shrink-0 text-zinc-500 transition hover:text-violet-300"
+                      className="shrink-0 text-zinc-500 transition hover:text-[#00f5a0]"
                     >
                       {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                     </button>
@@ -272,12 +273,12 @@ export default function LoginPage() {
                       onChange={(event) => setRememberMe(event.target.checked)}
                       className="sr-only"
                     />
-                    <span className={`flex h-4 w-4 items-center justify-center rounded border transition ${rememberMe ? "border-violet-500 bg-violet-600 text-white" : "border-zinc-700 bg-transparent"}`}>
+                    <span className={`flex h-4 w-4 items-center justify-center rounded border transition ${rememberMe ? "border-[#00f5a0] bg-[#00f5a0] text-black" : "border-zinc-700 bg-transparent"}`}>
                       {rememberMe && <Check size={12} />}
                     </span>
                     <Bi en="Remember me" bn="আমাকে মনে রাখো" />
                   </label>
-                  <Link href="/forgot-password" className="font-medium text-violet-400 transition hover:text-violet-300">
+                  <Link href="/forgot-password" className="font-medium text-[#00f5a0] transition hover:underline">
                     <Bi en="Forgot password?" bn="পাসওয়ার্ড ভুলে গেছ?" />
                   </Link>
                 </div>
@@ -285,7 +286,7 @@ export default function LoginPage() {
                 {/* Submit */}
                 <button
                   type="submit"
-                  className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-linear-to-r from-violet-600 to-blue-500 text-sm font-semibold text-white shadow-lg shadow-violet-950/30 transition duration-300 hover:-translate-y-0.5 hover:shadow-violet-500/20 active:translate-y-0"
+                  className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#00f5a0] to-[#00d2ff] text-xs font-mono font-bold uppercase tracking-wider text-black shadow-lg shadow-[#00f5a0]/20 transition duration-300 hover:shadow-[#00f5a0]/35 hover:scale-[1.01] active:translate-y-0 cursor-pointer"
                 >
                   <Bi en="Sign In" bn="সাইন ইন" />
                   <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
@@ -345,9 +346,9 @@ export default function LoginPage() {
               <SocialBtn />
 
               {/* Sign up */}
-              <p className="mt-8 text-center text-sm text-zinc-500">
+              <p className="mt-8 text-center text-sm text-zinc-400">
                 <Bi en="Don&apos;t have an account?" bn="অ্যাকাউন্ট নেই?" />{" "}
-                <Link href="/sign-up" className="font-semibold text-violet-400 transition hover:text-violet-300">
+                <Link href="/sign-up" className="font-semibold text-[#00f5a0] transition hover:underline">
                   <Bi en="Sign Up" bn="সাইন আপ" />
                 </Link>
               </p>

@@ -121,33 +121,31 @@ const QUIZ_QUESTIONS: QuizQuestion[] = [
 ];
 
 interface CareerQuizWizardProps {
-  onComplete: (quizSummaryPrompt: string) => void;
+  onComplete: (quizSummary: string) => void;
   onClose: () => void;
 }
 
-export default function CareerQuizWizard({
-  onComplete,
-  onClose,
-}: CareerQuizWizardProps) {
+export default function CareerQuizWizard({ onComplete, onClose }: CareerQuizWizardProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const totalSteps = QUIZ_QUESTIONS.length;
   const question = QUIZ_QUESTIONS[currentStep];
-  const progressPercent = Math.round(((currentStep + 1) / totalSteps) * 100);
+  const progressPercent = ((currentStep + 1) / totalSteps) * 100;
 
   const handleSelectOption = (optionIndex: number) => {
-    const updatedAnswers = { ...selectedAnswers, [currentStep]: optionIndex };
+    const updatedAnswers = {
+      ...selectedAnswers,
+      [currentStep]: optionIndex,
+    };
     setSelectedAnswers(updatedAnswers);
 
     if (currentStep < totalSteps - 1) {
-      // Auto-advance with subtle delay for smooth user experience
       setTimeout(() => {
         setCurrentStep((prev) => prev + 1);
-      }, 180);
+      }, 200);
     } else {
-      // Final step completed
       setIsSubmitting(true);
       setTimeout(() => {
         const summary = compileQuizSummary(updatedAnswers);
@@ -179,9 +177,9 @@ export default function CareerQuizWizard({
   };
 
   return (
-    <div className="absolute inset-0 z-20 flex flex-col bg-[#090814]/98 backdrop-blur-2xl text-zinc-100 animate-in fade-in zoom-in-95 duration-200">
+    <div className="absolute inset-0 z-20 flex flex-col bg-[#070a12]/98 backdrop-blur-2xl text-zinc-100 animate-in fade-in zoom-in-95 duration-200">
       {/* Quiz Top Bar */}
-      <div className="flex items-center justify-between border-b border-white/[0.08] px-4 py-3 bg-white/[0.02]">
+      <div className="flex items-center justify-between border-b border-white/[0.08] px-4 py-3 bg-[#0c101c]">
         <div className="flex items-center gap-2">
           {currentStep > 0 ? (
             <button
@@ -194,16 +192,16 @@ export default function CareerQuizWizard({
               <ArrowLeft className="h-4 w-4" />
             </button>
           ) : (
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-violet-600/20 border border-violet-500/30 text-violet-300">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#00f5a0]/15 border border-[#00f5a0]/30 text-[#00f5a0]">
               <Target className="h-4 w-4" />
             </div>
           )}
           <div>
-            <h3 className="text-xs font-bold text-white flex items-center gap-1.5">
+            <h3 className="text-xs font-bold text-white flex items-center gap-1.5 font-heading">
               <span>Career Matcher Quiz</span>
-              <Sparkles className="h-3 w-3 text-amber-300" />
+              <Sparkles className="h-3 w-3 text-[#00f5a0]" />
             </h3>
-            <p className="text-[10px] text-zinc-400">
+            <p className="text-[10px] font-mono text-zinc-400">
               ধাপ {currentStep + 1} / {totalSteps}
             </p>
           </div>
@@ -223,7 +221,7 @@ export default function CareerQuizWizard({
       {/* Progress Bar */}
       <div className="w-full bg-white/[0.05] h-1">
         <div
-          className="bg-gradient-to-r from-violet-500 via-indigo-500 to-sky-400 h-1 transition-all duration-300 ease-out"
+          className="bg-gradient-to-r from-[#00f5a0] via-[#00d2ff] to-[#38bdf8] h-1 transition-all duration-300 ease-out"
           style={{ width: `${progressPercent}%` }}
         />
       </div>
@@ -232,10 +230,10 @@ export default function CareerQuizWizard({
       <div className="flex-1 overflow-y-auto p-4 sm:p-5 flex flex-col justify-between">
         {isSubmitting ? (
           <div className="flex-1 flex flex-col items-center justify-center text-center py-8">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-600/20 border border-violet-500/40 text-violet-300 animate-pulse mb-3">
-              <Sparkles className="h-7 w-7 text-violet-400 animate-spin" />
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#00f5a0]/15 border border-[#00f5a0]/30 text-[#00f5a0] animate-pulse mb-3">
+              <Sparkles className="h-7 w-7 text-[#00f5a0] animate-spin" />
             </div>
-            <h4 className="text-sm font-bold text-white">
+            <h4 className="text-sm font-bold text-white font-heading">
               আপনার উত্তর বিশ্লেষণ করা হচ্ছে...
             </h4>
             <p className="text-xs text-zinc-400 mt-1 max-w-[280px]">
@@ -246,10 +244,10 @@ export default function CareerQuizWizard({
           <div>
             {/* Question Title */}
             <div className="mb-4">
-              <span className="inline-block text-[10px] font-semibold uppercase tracking-wider text-violet-400 mb-1">
+              <span className="inline-block text-[10px] font-mono font-semibold uppercase tracking-wider text-[#00f5a0] mb-1">
                 প্রশ্ন {question.id}
               </span>
-              <h4 className="text-sm font-semibold text-white leading-snug">
+              <h4 className="text-sm font-bold text-white leading-snug font-heading">
                 {question.title}
               </h4>
               <p className="text-[11px] text-zinc-400 mt-1">
@@ -268,27 +266,27 @@ export default function CareerQuizWizard({
                     onClick={() => handleSelectOption(idx)}
                     className={`w-full text-left p-3 rounded-xl border transition-all duration-200 cursor-pointer flex items-start gap-3 group ${
                       isSelected
-                        ? "border-violet-500 bg-violet-600/20 text-white shadow-md shadow-violet-600/20"
-                        : "border-white/[0.08] bg-white/[0.03] text-zinc-200 hover:border-violet-500/40 hover:bg-violet-500/10 hover:text-white"
+                        ? "border-[#00f5a0] bg-[#00f5a0]/15 text-white shadow-[0_0_15px_rgba(0,245,160,0.15)]"
+                        : "border-white/[0.08] bg-[#0c101c] text-zinc-200 hover:border-[#00f5a0]/40 hover:bg-[#00f5a0]/[0.05] hover:text-white"
                     }`}
                   >
                     <div
                       className={`mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border transition ${
                         isSelected
-                          ? "border-violet-400 bg-violet-500 text-white"
-                          : "border-zinc-600 group-hover:border-violet-400"
+                          ? "border-[#00f5a0] bg-[#00f5a0] text-black"
+                          : "border-zinc-600 group-hover:border-[#00f5a0]"
                       }`}
                     >
                       {isSelected ? (
                         <CheckCircle2 className="h-3 w-3 fill-current" />
                       ) : (
-                        <span className="text-[9px] font-bold text-zinc-400 group-hover:text-violet-300">
+                        <span className="text-[9px] font-mono font-bold text-zinc-400 group-hover:text-[#00f5a0]">
                           {String.fromCharCode(65 + idx)}
                         </span>
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-xs font-medium leading-snug">
+                      <div className="text-xs font-semibold leading-snug">
                         {option.label}
                       </div>
                       <div className="text-[11px] text-zinc-400 mt-0.5 leading-relaxed">
@@ -304,13 +302,13 @@ export default function CareerQuizWizard({
 
         {/* Footer Navigation Hints */}
         {!isSubmitting && (
-          <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] text-zinc-500">
+          <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-[11px] text-zinc-500 font-mono">
             <span>ক্লিক করলেই পরবর্তী প্রশ্নে যাবে</span>
             {selectedAnswers[currentStep] !== undefined && currentStep < totalSteps - 1 && (
               <button
                 type="button"
                 onClick={() => setCurrentStep((prev) => prev + 1)}
-                className="text-violet-400 hover:text-violet-300 flex items-center gap-1 font-medium cursor-pointer"
+                className="text-[#00f5a0] hover:underline flex items-center gap-1 font-semibold cursor-pointer"
               >
                 <span>পরবর্তী</span>
                 <ArrowRight className="h-3 w-3" />
