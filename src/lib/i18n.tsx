@@ -163,6 +163,119 @@ const en = {
   t_Practice: "Practice",
   t_Video: "Video",
   t_Book: "Book",
+
+  auth_sign_in: "Sign in",
+  auth_sign_up: "Sign up",
+  auth_welcome_back: "Welcome back",
+  auth_create_account: "Create account",
+  auth_email: "Email address",
+  auth_password: "Password",
+  auth_confirm_password: "Confirm password",
+  auth_full_name: "Full name",
+  auth_remember_me: "Remember me",
+  auth_forgot_password: "Forgot password?",
+  auth_dont_have_account: "Don't have an account?",
+  auth_already_have_account: "Already have an account?",
+  auth_sign_in_with: "Or continue with",
+  auth_sign_up_with: "Or sign up with",
+  auth_google: "Google",
+  auth_github: "GitHub",
+  auth_signing_in: "Signing in...",
+  auth_creating_account: "Creating account...",
+
+  verify_check_inbox: "Check your inbox",
+  verify_email_sent: "A verification email has been sent to",
+  verify_not_received: "Did not receive the email?",
+  verify_resend: "Resend verification email",
+  verify_resending: "Resending...",
+  verify_cooldown: "Please wait {seconds} seconds before resending.",
+  verify_email_not_verified: "Your email is not verified. Please check your inbox and verify your email address.",
+  verify_success: "Email verified successfully!",
+  verify_failed: "Verification failed or the link has expired.",
+  verify_redirecting: "Redirecting to your roadmaps...",
+
+  progress_save_failed: "Failed to save progress. Please try again.",
+  progress_load_failed: "Failed to load progress.",
+  network_error: "Network error. We'll save your progress in the background.",
+
+  notif_login_success: "Welcome back!",
+  notif_login_failed: "Login failed. Please check your credentials.",
+  notif_signup_success: "Account created successfully!",
+  notif_signup_failed: "Could not create account. Please try again.",
+  notif_signout_success: "Signed out successfully.",
+  notif_signout_failed: "Could not sign out. Please try again.",
+  notif_social_success: "Signed in with {provider}.",
+  notif_social_failed: "Sign in with {provider} failed.",
+  notif_verify_sent: "Verification email sent.",
+  notif_verify_resent: "Verification email resent.",
+  notif_verify_resend_failed: "Could not resend verification email.",
+  notif_progress_saved: "Progress saved.",
+  notif_progress_recovered: "Progress saved successfully after retry.",
+  notif_step_complete: "Step marked complete.",
+  notif_email_not_found: "Email not found.",
+
+  about_cp_k: "About CodePath",
+  about_cp_t: "Free, guided roadmaps for every CSE career",
+  about_cp_lead:
+    "CodePath helps CSE students and aspiring tech professionals learn in the right order. Pick a career path, follow curated steps, track your progress, and build real projects — all for free, in English or Bangla.",
+  about_cp_problem_t: "The problem",
+  about_cp_problem_d:
+    "There are hundreds of tutorials and thousands of tools, but no clear order to follow. Learners waste time jumping between random videos instead of building real skills.",
+  about_cp_solution_t: "What CodePath does",
+  about_cp_solution_d:
+    "CodePath is a free, step-by-step career roadmap platform. Pick a path, follow curated steps in order, track your progress, and build a final project — in English or Bangla.",
+  about_cp_feature_progress_t: "Track your progress",
+  about_cp_feature_progress_d:
+    "Mark steps and checklist items complete. Your progress saves to your device and syncs when you sign in.",
+  about_cp_feature_resources_t: "Free resources & projects",
+  about_cp_feature_resources_d:
+    "Every step links to handpicked free tutorials, courses, docs, and a final project to build and publish.",
+  about_cp_feature_bilingual_t: "English and Bangla",
+  about_cp_feature_bilingual_d:
+    "The entire platform is available in both English and Bangla, so you can learn in the language you're most comfortable with.",
+  about_cp_get_started_t: "Get started",
+  about_cp_get_started_d:
+    "Browse all career paths and open the first step of any roadmap to begin learning today.",
+  about_cp_cta: "Explore roadmaps",
+  about_dev_k: "About the Developer",
+  profile_title: "My Profile",
+  profile_welcome: "Welcome back, {name}",
+  profile_edit_name: "Full name",
+  profile_email: "Email address",
+  profile_image: "Profile image",
+  profile_upload: "Upload image",
+  profile_change: "Change image",
+  profile_remove: "Remove image",
+  profile_cancel: "Cancel",
+  profile_save: "Save changes",
+  profile_save_success: "Profile updated successfully.",
+  profile_name_updated: "Name updated.",
+  profile_image_updated: "Profile image updated.",
+  profile_error_invalid_type: "Only JPEG, PNG, and WebP images are allowed.",
+  profile_error_name: "Please enter a valid name.",
+  profile_error_file_too_large: "Image must be under 200 KB.",
+  profile_error_upload_failed: "Image upload failed. Please try again.",
+  profile_error_session_expired: "Session expired. Please sign in again.",
+  profile_nav: "Profile",
+
+  logout: "Sign out",
+
+  footer_tagline: "Free step-by-step roadmaps for every CSE career — in English and Bangla.",
+  footer_explore: "Explore",
+  footer_home: "Home",
+  footer_roadmaps: "Roadmaps",
+  footer_about: "About",
+  footer_learn: "Learn",
+  footer_web_software: "Web & Software",
+  footer_ai_data: "AI & Data",
+  footer_cloud_systems: "Cloud & Systems",
+  footer_security_networks: "Security & Networks",
+  footer_account: "Account",
+  footer_sign_in: "Sign in",
+  footer_sign_up: "Sign up",
+  footer_sign_out: "Sign out",
+  footer_follow: "Follow us",
+  footer_rights: "All rights reserved.",
 } as const;
 
 export type TKey = keyof typeof en;
@@ -317,6 +430,119 @@ const bn: Record<TKey, string> = {
   t_Practice: "প্র্যাকটিস",
   t_Video: "ভিডিও",
   t_Book: "বই",
+
+  auth_sign_in: "সাইন ইন",
+  auth_sign_up: "সাইন আপ",
+  auth_welcome_back: "আবার স্বাগতম",
+  auth_create_account: "অ্যাকাউন্ট খোলো",
+  auth_email: "ইমেইল ঠিকানা",
+  auth_password: "পাসওয়ার্ড",
+  auth_confirm_password: "পাসওয়ার্ড নিশ্চিত করো",
+  auth_full_name: "পূর্ণ নাম",
+  auth_remember_me: "আমাকে মনে রাখো",
+  auth_forgot_password: "পাসওয়ার্ড ভুলে গেছ?",
+  auth_dont_have_account: "অ্যাকাউন্ট নেই?",
+  auth_already_have_account: "আগে থেকেই অ্যাকাউন্ট আছে?",
+  auth_sign_in_with: "অথবা এর মাধ্যমে চালিয়ে যাও",
+  auth_sign_up_with: "অথবা এর মাধ্যমে সাইন আপ করো",
+  auth_google: "গুগল",
+  auth_github: "গিটহাব",
+  auth_signing_in: "সাইন ইন করা হচ্ছে...",
+  auth_creating_account: "অ্যাকাউন্ট তৈরি করা হচ্ছে...",
+
+  verify_check_inbox: "আপনার ইনবক্স যাচাই করুন",
+  verify_email_sent: "একটি যাচাইকরণ ইমেইল পাঠানো হয়েছে",
+  verify_not_received: "ইমেইল পাননি?",
+  verify_resend: "যাচাইকরণ ইমেইল আবার পাঠান",
+  verify_resending: "আবার পাঠানো হচ্ছে...",
+  verify_cooldown: "{seconds} সেকেন্ড অপেক্ষা করার পর আবার পাঠান।",
+  verify_email_not_verified: "আপনার ইমেইল যাচাই করা হয়নি। আপনার ইনবক্স যাচাই করুন এবং ইমেইল ঠিকানা যাচাই করুন।",
+  verify_success: "ইমেইল সফলভাবে যাচাই করা হয়েছে!",
+  verify_failed: "যাচাইকরণ ব্যর্থ হয়েছে অথবা লিঙ্কের মেয়াদ শেষ হয়েছে।",
+  verify_redirecting: "আপনার রোডম্যাপে রিডাইরেক্ট করা হচ্ছে...",
+
+  progress_save_failed: "অগ্রগতি সংরক্ষণে ব্যর্থ হয়েছে। আবার চেষ্টা করুন।",
+  progress_load_failed: "অগ্রগতি লোড করতে ব্যর্থ হয়েছে।",
+  network_error: "নেটওয়ার্ক ত্রুটি। আমরা এটি পেছনে সংরক্ষণ করার চেষ্টা করব।",
+
+  notif_login_success: "আপনাকে স্বাগতম!",
+  notif_login_failed: "লগইন ব্যর্থ হয়েছে। ক্রেডেনশিয়ালস যাচাই করে আবার চেষ্টা করুন।",
+  notif_signup_success: "অ্যাকাউন্ট সফলভাবে তৈরি করা হয়েছে!",
+  notif_signup_failed: "অ্যাকাউন্ট তৈরি করা যায়নি। আবার চেষ্টা করুন।",
+  notif_signout_success: "সফলভাবে সাইন আউট করা হয়েছে।",
+  notif_signout_failed: "সাইন আউট করা যায়নি। আবার চেষ্টা করুন।",
+  notif_social_success: "{provider} দিয়ে সাইন ইন করা হয়েছে।",
+  notif_social_failed: "{provider} দিয়ে সাইন ইন ব্যর্থ হয়েছে।",
+  notif_verify_sent: "যাচাইকরণ ইমেইল পাঠানো হয়েছে।",
+  notif_verify_resent: "যাচাইকরণ ইমেইল আবার পাঠানো হয়েছে।",
+  notif_verify_resend_failed: "যাচাইকরণ ইমেইল আবার পাঠানো যায়নি।",
+  notif_progress_saved: "অগ্রগতি সংরক্ষণ করা হয়েছে।",
+  notif_progress_recovered: "পুনরায় চেষ্টার পরে অগ্রগতি সফলভাবে সংরক্ষণ করা হয়েছে।",
+  notif_step_complete: "ধাপটি সম্পন্ন হিসেবে চিহ্নিত করা হয়েছে।",
+  notif_email_not_found: "ইমেইল খুঁজে পাওয়া যায়নি।",
+
+  about_cp_k: "CodePath সম্পর্কে",
+  about_cp_t: "প্রতিটি CSE ক্যারিয়ারের জন্য ফ্রি, গাইডেড রোডম্যাপ",
+  about_cp_lead:
+    "CodePath CSE শিক্ষার্থী এবং আত্মবিশ্বাসী টেক পেশাদারদের সঠিক ক্রমে শিখতে সাহায্য করে। একটি ক্যারিয়ার পথ বেছে নাও, কিউরেট করা ধাপগুলো অনুসরণ করো, অগ্রগতি ট্র্যাক করো এবং বাস্তব প্রজেক্ট বানাও — সবকিছু ফ্রি, ইংরেজি ও বাংলায়।",
+  about_cp_problem_t: "সমস্যাটি",
+  about_cp_problem_d:
+    "শত শত টিউটোরিয়াল এবং হাজারো টুল থাকলেও কোনো পরিষ্কার ক্রম নেই। শিক্ষার্থীরা এলোমেলো ভিডিও দেখার মধ্যে সময় নষ্ট করে বাস্তব দক্ষতা গড়ার বদলে।",
+  about_cp_solution_t: "CodePath কী করে",
+  about_cp_solution_d:
+    "CodePath একটি ফ্রি, ধাপে ধাপে ক্যারিয়ার রোডম্যাপ প্ল্যাটফর্ম। একটি পথ বেছে নাও, কিউরেট করা ধাপগুলো ক্রমানুসারে অনুসরণ করো, অগ্রগতি ট্র্যাক করো এবং একটি ফাইনাল প্রজেক্ট বানাও — ইংরেজি ও বাংলায়।",
+  about_cp_feature_progress_t: "অগ্রগতি ট্র্যাক করো",
+  about_cp_feature_progress_d:
+    "ধাপ এবং চেকলিস্ট আইটেম সম্পন্ন হিসেবে চিহ্নিত করো। তোমার অগ্রগতি তোমার ডিভাইসে সংরক্ষণ হবে এবং সাইন ইন করলে সিঙ্ক হবে।",
+  about_cp_feature_resources_t: "ফ্রি রিসোর্স ও প্রজেক্ট",
+  about_cp_feature_resources_d:
+    "প্রতিটি ধাপে হাত-বাছাই করা ফ্রি টিউটোরিয়াল, কোর্স, ডক্স এবং বানাতে ও প্রকাশ করতে একটি ফাইনাল প্রজেক্ট লিঙ্ক করা থাকে।",
+  about_cp_feature_bilingual_t: "ইংরেজি ও বাংলা",
+  about_cp_feature_bilingual_d:
+    "পুরো প্ল্যাটফর্মটি ইংরেজি এবং বাংলা উভয় ভাষায় উপলব্ধ, যাতে তুমি তোমার সবচেয়ে আরামদায়ক ভাষায় শিখতে পারো।",
+  about_cp_get_started_t: "শুরু করো",
+  about_cp_get_started_d:
+    "সব ক্যারিয়ার পথ ব্রাউজ করো এবং শিখা শুরু করতে যেকোনো রোডম্যাপের প্রথম ধাপ খুলো।",
+  about_cp_cta: "রোডম্যাপ দেখো",
+  about_dev_k: "ডেভেলপারের সম্পর্কে",
+  profile_title: "আমার প্রোফাইল",
+  profile_welcome: "আবার স্বাগতম, {name}",
+  profile_edit_name: "পূর্ণ নাম",
+  profile_email: "ইমেইল ঠিকানা",
+  profile_image: "প্রোফাইল ছবি",
+  profile_upload: "ছবি আপলোড করুন",
+  profile_change: "ছবি পরিবর্তন করুন",
+  profile_remove: "ছবি সরান",
+  profile_cancel: "বাতিল করুন",
+  profile_save: "পরিবর্তন সংরক্ষণ করুন",
+  profile_save_success: "প্রোফাইল সফলভাবে আপডেট করা হয়েছে।",
+  profile_name_updated: "নাম আপডেট করা হয়েছে।",
+  profile_image_updated: "প্রোফাইল ছবি আপডেট করা হয়েছে।",
+  profile_error_invalid_type: "শুধুমাত্র JPEG, PNG এবং WebP ছবি অনুমোদিত।",
+  profile_error_name: "দয়া করে একটি সঠিক নাম লিখুন।",
+  profile_error_file_too_large: "ছবি ২০০ কেবির কম হতে হবে।",
+  profile_error_upload_failed: "ছবি আপলোড ব্যর্থ হয়েছে। আবার চেষ্টা করুন।",
+  profile_error_session_expired: "সেশন মেয়াদ শেষ হয়েছে। আবার সাইন ইন করুন।",
+  profile_nav: "প্রোফাইল",
+
+  logout: "সাইন আউট",
+
+  footer_tagline: "প্রতিটি CSE ক্যারিয়ারের জন্য শূন্য থেকে হিরো রোডম্যাপ — ইংরেজি ও বাংলায়।",
+  footer_explore: "অনুসন্ধান",
+  footer_home: "হোম",
+  footer_roadmaps: "রোডম্যাপ",
+  footer_about: "আমাদের সম্পর্কে",
+  footer_learn: "শিক্ষা",
+  footer_web_software: "ওয়েব ও সফটওয়্যার",
+  footer_ai_data: "AI ও ডেটা",
+  footer_cloud_systems: "ক্লাউড ও সিস্টেম",
+  footer_security_networks: "সিকিউরিটি ও নেটওয়ার্ক",
+  footer_account: "অ্যাকাউন্ট",
+  footer_sign_in: "সাইন ইন",
+  footer_sign_up: "সাইন আপ",
+  footer_sign_out: "সাইন আউট",
+  footer_follow: "আমাদের ফলো করুন",
+  footer_rights: "স্বত্ব সংরক্ষিত।",
 };
 
 const dict = { en, bn } as const;
@@ -356,15 +582,13 @@ type Ctx = {
 const LanguageContext = createContext<Ctx | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
-
-  // Read the saved language after the first render (keeps server/client HTML equal).
-  useEffect(() => {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved === "bn" || saved === "en") {
-      setLangState(saved);
+  const [lang, setLangState] = useState<Lang>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved === "bn" || saved === "en") return saved;
     }
-  }, []);
+    return "en";
+  });
 
   useEffect(() => {
     document.documentElement.lang = lang;

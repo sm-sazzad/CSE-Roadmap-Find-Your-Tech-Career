@@ -20,15 +20,50 @@ import {
   Zap,
 } from "lucide-react";
 import { signIn } from "@/lib/auth-client";
+import { authClient } from "@/lib/auth-client";
 import SocialBtn from "@/components/SocialBtn";
-import { Flip, toast } from "react-toastify";
+import { useToast } from "@/lib/notifications";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  const { lang } = useLang();
+  const { lang, t } = useLang();
+  const { success, error, loading: showLoading, dismiss } = useToast();
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(true);
+  const [showUnverified, setShowUnverified] = useState(false);
+  const [resendCooldown, setResendCooldown] = useState(0);
+  const [isResending, setIsResending] = useState(false);
+  const [pendingEmail, setPendingEmail] = useState("");
   const router = useRouter();
+
+  const handleResendVerification = async () => {
+    if (isResending || resendCooldown > 0) return;
+    if (!pendingEmail) return;
+
+    setIsResending(true);
+    try {
+      await authClient.sendVerificationEmail({
+        email: pendingEmail,
+        callbackURL: "/verify-email",
+      });
+
+      setResendCooldown(60);
+      const interval = setInterval(() => {
+        setResendCooldown((prev) => (prev > 0 ? prev - 1 : 0));
+        if (resendCooldown <= 1) clearInterval(interval);
+      }, 1000);
+
+      success(t("notif_verify_resent"), undefined, {
+        duration: 3000,
+      });
+    } catch {
+      error(t("notif_verify_resend_failed"), undefined, {
+        duration: 3000,
+      });
+    } finally {
+      setIsResending(false);
+    }
+  };
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#070710] text-white">
@@ -42,7 +77,6 @@ export default function LoginPage() {
           <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-violet-400/20 bg-violet-500/10 text-violet-300 transition duration-300 group-hover:scale-105 group-hover:bg-violet-500/20">
             <Code2 size={25} />
           </div>
-
           <div>
             <p className="text-lg font-bold tracking-tight">
               CSE <span className="text-violet-400">Roadmap</span>
@@ -50,7 +84,6 @@ export default function LoginPage() {
             <p className="text-xs text-zinc-500"><Bi en="Find Your Tech Career" bn="তোমার টেক ক্যারিয়ার খুঁজে নাও" /></p>
           </div>
         </Link>
-
         <Link
           href="/"
           className="flex items-center gap-2 text-sm text-zinc-400 transition hover:text-white"
@@ -73,7 +106,6 @@ export default function LoginPage() {
             <Sparkles size={14} />
             <Bi en="Your journey into tech starts here" bn="টেক জগতে তোমার যাত্রা শুরু এখানে" />
           </div>
-
           <h1 className="max-w-xl text-5xl font-bold leading-[1.15] tracking-tight xl:text-6xl">
             <Bi en="Build Your" bn="গড়ে তোলো তোমার" />
             <span className="mt-1 block bg-linear-to-r from-violet-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
@@ -81,31 +113,28 @@ export default function LoginPage() {
             </span>
             <Bi en="with Clarity." bn="স্পষ্টতার সাথে।" />
           </h1>
-
           <p className="mt-6 max-w-lg text-base leading-8 text-zinc-400">
             <Bi en="Explore different CSE career paths, follow structured roadmaps, and develop the skills you need to build your future in technology." bn="বিভিন্ন CSE ক্যারিয়ার পথ দেখো, সাজানো রোডম্যাপ অনুসরণ করো এবং প্রযুক্তিতে নিজের ভবিষ্যৎ গড়ার দক্ষতা তৈরি করো।" />
           </p>
-
           <div className="mt-10 space-y-6">
             {[
               {
                 icon: Compass,
-                title: (lang === "bn" ? "সাজানো রোডম্যাপ" : (lang === "bn" ? "সাজানো রোডম্যাপ" : "Structured Roadmaps")),
-                description: (lang === "bn" ? "ধাপে ধাপে শেখার পথ অনুসরণ করো।" : (lang === "bn" ? "ধাপে ধাপে শেখার পথ অনুসরণ করো।" : "Follow step-by-step learning paths.")),
+                title: lang === "bn" ? "সাজানো রোডম্যাপ" : "Structured Roadmaps",
+                description: lang === "bn" ? "ধাপে ধাপে শেখার পথ অনুসরণ করো।" : "Follow step-by-step learning paths.",
               },
               {
                 icon: BookOpen,
-                title: (lang === "bn" ? "বাস্তব প্রজেক্ট" : (lang === "bn" ? "বাস্তব প্রজেক্ট" : "Real Projects")),
-                description: (lang === "bn" ? "ব্যবহারিক দক্ষতা ও পোর্টফোলিও গড়ো।" : (lang === "bn" ? "ব্যবহারিক দক্ষতা ও পোর্টফোলিও গড়ো।" : "Build practical skills and your portfolio.")),
+                title: lang === "bn" ? "বাস্তব প্রজেক্ট" : "Real Projects",
+                description: lang === "bn" ? "ব্যবহারিক দক্ষতা ও পোর্টফোলিও গড়ো।" : "Build practical skills and your portfolio.",
               },
               {
                 icon: Zap,
-                title: (lang === "bn" ? "একাধিক ক্যারিয়ার পথ" : (lang === "bn" ? "একাধিক ক্যারিয়ার পথ" : "Multiple Career Paths")),
-                description: (lang === "bn" ? "ওয়েব ডেভেলপমেন্ট, AI ও আরও অনেক কিছু দেখো।" : (lang === "bn" ? "ওয়েব ডেভেলপমেন্ট, AI ও আরও অনেক কিছু দেখো।" : "Explore Web Development, AI and beyond.")),
+                title: lang === "bn" ? "একাধিক ক্যারিয়ার পথ" : "Multiple Career Paths",
+                description: lang === "bn" ? "ওয়েব ডেভেলপমেন্ট, AI ও আরও অনেক কিছু দেখো।" : "Explore Web Development, AI and beyond.",
               },
             ].map((item, index) => {
               const Icon = item.icon;
-
               return (
                 <motion.div
                   key={item.title}
@@ -117,20 +146,14 @@ export default function LoginPage() {
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-violet-400/15 bg-violet-500/[0.07] text-violet-300">
                     <Icon size={22} />
                   </div>
-
                   <div>
-                    <h3 className="text-sm font-semibold text-zinc-200">
-                      {item.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-zinc-500">
-                      {item.description}
-                    </p>
+                    <h3 className="text-sm font-semibold text-zinc-200">{item.title}</h3>
+                    <p className="mt-1 text-sm text-zinc-500">{item.description}</p>
                   </div>
                 </motion.div>
               );
             })}
           </div>
-
           <div className="mt-12">
             <p className="text-lg font-semibold italic text-violet-300">
               <Bi en="Your Tech Journey Starts Here." bn="তোমার টেক যাত্রা শুরু এখানেই।" />
@@ -155,11 +178,9 @@ export default function LoginPage() {
                 <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-violet-400/20 bg-violet-500/10 text-violet-300">
                   <Code2 size={30} />
                 </div>
-
                 <h2 className="text-3xl font-bold tracking-tight">
                   <Bi en="Welcome Back" bn="আবার স্বাগতম" />
                 </h2>
-
                 <p className="mt-3 text-sm leading-6 text-zinc-500">
                   <Bi en="Sign in to your account and continue" bn="তোমার অ্যাকাউন্টে সাইন ইন করে চালিয়ে যাও" />
                   <br className="hidden sm:block" /> <Bi en="your learning journey." bn="তোমার শেখার যাত্রা।" />
@@ -173,80 +194,68 @@ export default function LoginPage() {
                   const formData = new FormData(event.target);
                   const userData = Object.fromEntries(formData.entries());
 
-                  const { data, error } = await signIn.email({
+                  const loadingId = showLoading(t("auth_signing_in"), undefined);
+                  const { error: signInError } = await signIn.email({
                     email: String(userData.email),
                     password: String(userData.password),
                   });
-                  if (error) {
-                    toast.error(error.message || (lang === "bn" ? "লগইন ব্যর্থ হয়েছে!" : (lang === "bn" ? "লগইন ব্যর্থ হয়েছে!" : "Login failed!")), {
-                      position: "top-center",
-                      autoClose: 2000,
-                      theme: "dark",
-                      transition: Flip,
-                    });
-                  } else {
-                    toast.success((lang === "bn" ? "🎉 লগইন সফল হয়েছে!" : (lang === "bn" ? "🎉 লগইন সফল হয়েছে!" : "🎉 Login successful!")), {
-                      position: "top-center",
-                      autoClose: 2000,
-                      theme: "dark",
-                      transition: Flip,
-                    });
+                  dismiss(loadingId);
+                  if (signInError) {
+                    const isEmailNotVerified = signInError.code === "EMAIL_NOT_VERIFIED";
 
+                    if (isEmailNotVerified) {
+                      setPendingEmail(String(userData.email));
+                      setShowUnverified(true);
+                    } else {
+                      error(signInError.message || t("notif_login_failed"), undefined, {
+                        duration: 2500,
+                      });
+                    }
+                  } else {
+                    success(t("notif_login_success"), undefined, {
+                      duration: 2500,
+                    });
                     router.push("/");
                   }
                 }}
                 className="space-y-5"
               >
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="mb-2 block text-sm font-medium text-zinc-300"
-                  >
+                  <label htmlFor="email" className="mb-2 block text-sm font-medium text-zinc-300">
                     <Bi en="Email Address" bn="ইমেইল ঠিকানা" />
                   </label>
-
                   <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.025] px-4 transition focus-within:border-violet-500/60 focus-within:ring-2 focus-within:ring-violet-500/10">
                     <Mail size={18} className="shrink-0 text-zinc-500" />
-
                     <input
                       id="email"
                       name="email"
                       type="email"
-                      placeholder={(lang === "bn" ? "তোমার ইমেইল ঠিকানা লেখো" : (lang === "bn" ? "তোমার ইমেইল ঠিকানা লেখো" : "Enter your email address"))}
+                      placeholder={lang === "bn" ? "তোমার ইমেইল ঠিকানা লেখো" : "Enter your email address"}
                       autoComplete="email"
                       required
                       className="h-12 w-full bg-transparent text-sm text-white outline-none placeholder:text-zinc-600"
                     />
                   </div>
                 </div>
-
                 <div>
-                  <label
-                    htmlFor="password"
-                    className="mb-2 block text-sm font-medium text-zinc-300"
-                  >
+                  <label htmlFor="password" className="mb-2 block text-sm font-medium text-zinc-300">
                     <Bi en="Password" bn="পাসওয়ার্ড" />
                   </label>
-
                   <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.025] px-4 transition focus-within:border-violet-500/60 focus-within:ring-2 focus-within:ring-violet-500/10">
                     <LockKeyhole size={18} className="shrink-0 text-zinc-500" />
-
                     <input
                       id="password"
                       name="password"
                       type={showPassword ? "text" : "password"}
-                      placeholder={(lang === "bn" ? "তোমার পাসওয়ার্ড লেখো" : (lang === "bn" ? "তোমার পাসওয়ার্ড লেখো" : "Enter your password"))}
+                      placeholder={lang === "bn" ? "তোমার পাসওয়ার্ড লেখো" : "Enter your password"}
                       autoComplete="current-password"
                       required
                       className="h-12 w-full bg-transparent text-sm text-white outline-none placeholder:text-zinc-600"
                     />
-
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      aria-label={
-                        showPassword ? (lang === "bn" ? "পাসওয়ার্ড লুকাও" : (lang === "bn" ? "পাসওয়ার্ড লুকাও" : "Hide password")) : "Show password"
-                      }
+                      aria-label={showPassword ? (lang === "bn" ? "পাসওয়ার্ড লুকাও" : "Hide password") : "Show password"}
                       className="shrink-0 text-zinc-500 transition hover:text-violet-300"
                     >
                       {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
@@ -263,22 +272,12 @@ export default function LoginPage() {
                       onChange={(event) => setRememberMe(event.target.checked)}
                       className="sr-only"
                     />
-                    <span
-                      className={`flex h-4 w-4 items-center justify-center rounded border transition ${
-                        rememberMe
-                          ? "border-violet-500 bg-violet-600 text-white"
-                          : "border-zinc-700 bg-transparent"
-                      }`}
-                    >
+                    <span className={`flex h-4 w-4 items-center justify-center rounded border transition ${rememberMe ? "border-violet-500 bg-violet-600 text-white" : "border-zinc-700 bg-transparent"}`}>
                       {rememberMe && <Check size={12} />}
                     </span>
                     <Bi en="Remember me" bn="আমাকে মনে রাখো" />
                   </label>
-
-                  <Link
-                    href="/forgot-password"
-                    className="font-medium text-violet-400 transition hover:text-violet-300"
-                  >
+                  <Link href="/forgot-password" className="font-medium text-violet-400 transition hover:text-violet-300">
                     <Bi en="Forgot password?" bn="পাসওয়ার্ড ভুলে গেছ?" />
                   </Link>
                 </div>
@@ -289,12 +288,51 @@ export default function LoginPage() {
                   className="group flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-linear-to-r from-violet-600 to-blue-500 text-sm font-semibold text-white shadow-lg shadow-violet-950/30 transition duration-300 hover:-translate-y-0.5 hover:shadow-violet-500/20 active:translate-y-0"
                 >
                   <Bi en="Sign In" bn="সাইন ইন" />
-                  <ArrowRight
-                    size={17}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
+                  <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" />
                 </button>
               </form>
+
+              {/* Unverified email notice */}
+              {showUnverified && (
+                <div className="mt-6 p-4 rounded-xl border border-violet-500/30 bg-violet-500/[0.05]">
+                  <div className="flex items-start gap-3">
+                    <span className="mt-0.5 shrink-0 text-violet-400">!</span>
+                    <div>
+                      <p className="text-sm text-zinc-200">
+                        <Bi en={t("verify_email_not_verified")} bn={t("verify_email_not_verified")} />
+                      </p>
+                      <p className="mt-2 text-xs text-zinc-500">
+                        {lang === "bn"
+                          ? `আপনার ইমেইল: ${pendingEmail}`
+                          : `Email: ${pendingEmail}`}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-3 flex items-center justify-between">
+                    <button
+                      onClick={handleResendVerification}
+                      disabled={isResending || resendCooldown > 0}
+                      className="text-xs font-medium text-violet-400 transition cursor-pointer hover:text-violet-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isResending
+                        ? lang === "bn"
+                          ? "পাঠানো হচ্ছে..."
+                          : "Sending..."
+                        : resendCooldown > 0
+                          ? t("verify_cooldown", { seconds: resendCooldown })
+                          : lang === "bn"
+                            ? "যাচাইকরণ ইমেইল আবার পাঠান"
+                            : t("verify_resend")}
+                    </button>
+                    <Link
+                      href="/verify-email"
+                      className="text-xs font-medium text-zinc-400 transition hover:text-zinc-200"
+                    >
+                      <Bi en="Go to verification page" bn="যাচাইকরণ পৃষ্ঠায় যাও" />
+                    </Link>
+                  </div>
+                </div>
+              )}
 
               {/* Divider */}
               <div className="my-7 flex items-center gap-4">
@@ -309,10 +347,7 @@ export default function LoginPage() {
               {/* Sign up */}
               <p className="mt-8 text-center text-sm text-zinc-500">
                 <Bi en="Don&apos;t have an account?" bn="অ্যাকাউন্ট নেই?" />{" "}
-                <Link
-                  href="/signup"
-                  className="font-semibold text-violet-400 transition hover:text-violet-300"
-                >
+                <Link href="/sign-up" className="font-semibold text-violet-400 transition hover:text-violet-300">
                   <Bi en="Sign Up" bn="সাইন আপ" />
                 </Link>
               </p>

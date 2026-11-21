@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { Inter, Noto_Sans_Bengali } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ToastHost from "@/components/ToastHost";
+import SocialWelcomeToast from "@/components/notifications/SocialWelcomeToast";
 import { LanguageProvider } from "@/lib/i18n";
+import { ProgressProvider } from "@/lib/progress";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const bengali = Noto_Sans_Bengali({
@@ -25,8 +29,13 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${bengali.variable}`}>
       <body>
         <LanguageProvider>
-          <Navbar />
-          {children}
+          <ProgressProvider>
+            <Navbar />
+            <ToastHost />
+            <SocialWelcomeToast />
+            {children}
+            <Footer />
+          </ProgressProvider>
         </LanguageProvider>
       </body>
     </html>

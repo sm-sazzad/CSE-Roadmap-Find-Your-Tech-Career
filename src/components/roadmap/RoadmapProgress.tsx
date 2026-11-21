@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useLang, num } from "@/lib/i18n";
+import { useProgress } from "@/lib/progress";
 
 type Item = { index: number; title: string; level: string };
 
@@ -9,24 +10,9 @@ type Props = { slug: string; items: Item[] };
 
 export default function RoadmapProgress({ slug, items }: Props) {
   const { t, lang } = useLang();
-  const [completed, setCompleted] = useState<number[]>([]);
-  const [active, setActive] = useState(0);
-  const key = `roadmap-progress-${slug}`;
+  const { percentage, isStepCompleted } = useProgress(slug, items.length);
 
-  useEffect(() => {
-    const sync = () => {
-      try {
-        const raw = localStorage.getItem(key);
-        const parsed = raw ? JSON.parse(raw) : [];
-        setCompleted(Array.isArray(parsed) ? parsed.map(Number) : []);
-      } catch {
-        setCompleted([]);
-      }
-    };
-    sync();
-    window.addEventListener("roadmap-progress-update", sync);
-    return () => window.removeEventListener("roadmap-progress-update", sync);
-  }, [key]);
+  const [active, setActive] = useState(0);
 
   useEffect(() => {
     const onScroll = () => {
@@ -43,17 +29,29 @@ export default function RoadmapProgress({ slug, items }: Props) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [items]);
 
-  const done = items.filter((i) => completed.includes(i.index)).length;
-  const pct = items.length ? Math.round((done / items.length) * 100) : 0;
+  const pct = percentage;
+  const done = items.filter((i) => isStepCompleted(i.index)).length;
   const R = 22;
   const C = 2 * Math.PI * R;
 
   return (
-    <aside className="lg:sticky lg:top-24 lg:self-start">
+    <aside className="lg:sticky lg:top-30 lg:mt-12 lg:self-start">
       <div className="glass overflow-hidden rounded-2xl">
-        <div className="flex items-center gap-4 border-b border-white/[0.06] p-5">
-          <svg width="56" height="56" viewBox="0 0 56 56" className="shrink-0 -rotate-90">
-            <circle cx="28" cy="28" r={R} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="5" />
+        <div className="flex items-center gap-4 border-b border-white/6 p-5">
+          <svg
+            width="56"
+            height="56"
+            viewBox="0 0 56 56"
+            className="shrink-0 -rotate-90"
+          >
+            <circle
+              cx="28"
+              cy="28"
+              r={R}
+              fill="none"
+              stroke="rgba(255,255,255,0.08)"
+              strokeWidth="5"
+            />
             <circle
               cx="28"
               cy="28"
@@ -66,6 +64,19 @@ export default function RoadmapProgress({ slug, items }: Props) {
               strokeDashoffset={C - (C * pct) / 100}
               style={{ transition: "stroke-dashoffset .6s ease" }}
             />
+            <text
+              x="28"
+              y="28"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="#e5e7eb"
+              fontSize="10"
+              fontWeight="600"
+              fillOpacity={pct > 0 ? 1 : 0.45}
+              transform="rotate(90 28 28)"
+            >
+              {num(pct, lang)}%
+            </text>
             <defs>
               <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0%" stopColor="#a78bfa" />
@@ -82,13 +93,12 @@ export default function RoadmapProgress({ slug, items }: Props) {
                 ? t("prog_done")
                 : t("prog_of", { a: done, b: items.length })}
             </p>
-            <p className="text-lg font-bold text-violet-300">{num(pct, lang)}%</p>
           </div>
         </div>
 
         <ol className="max-h-[52vh] overflow-y-auto p-2">
           {items.map((item, i) => {
-            const isDone = completed.includes(item.index);
+            const isDone = isStepCompleted(item.index);
             const isActive = active === item.index;
             return (
               <li key={item.index}>
@@ -100,7 +110,9 @@ export default function RoadmapProgress({ slug, items }: Props) {
                       ?.scrollIntoView({ behavior: "smooth", block: "start" })
                   }
                   className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm transition ${
-                    isActive ? "bg-violet-500/10 text-white" : "text-zinc-500 hover:bg-white/[0.04] hover:text-zinc-200"
+                    isActive
+                      ? "bg-violet-500/10 text-white"
+                      : "text-zinc-500 hover:bg-white/4 hover:text-zinc-200"
                   }`}
                 >
                   <span
@@ -108,8 +120,8 @@ export default function RoadmapProgress({ slug, items }: Props) {
                       isDone
                         ? "border-emerald-400/50 bg-emerald-400/15 text-emerald-300"
                         : isActive
-                        ? "border-violet-400/60 text-violet-200"
-                        : "border-white/10"
+                          ? "border-violet-400/60 text-violet-200"
+                          : "border-white/10"
                     }`}
                   >
                     {isDone ? "✓" : num(i + 1, lang)}

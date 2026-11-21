@@ -1,15 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLang, phrase, num } from "@/lib/i18n";
+import { useProgress } from "@/lib/progress";
 import type { RoadmapStep as StepType } from "@/lib/roadmap";
 
 type Props = {
   slug: string;
   step: StepType;
-  /** Original position in the roadmap (used for saving progress). */
   index: number;
-  /** Number shown to the learner (position inside the chosen track). */
   number: number;
   isLast: boolean;
   defaultOpen?: boolean;
@@ -21,16 +20,6 @@ const levelColor: Record<string, string> = {
   Advanced: "text-rose-300 border-rose-400/25 bg-rose-400/[0.07]",
 };
 
-function readList(key: string): string[] {
-  try {
-    const raw = localStorage.getItem(key);
-    const parsed = raw ? JSON.parse(raw) : [];
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-}
-
 export default function RoadmapStep({
   slug,
   step,
@@ -40,37 +29,22 @@ export default function RoadmapStep({
   defaultOpen = false,
 }: Props) {
   const { t, lang } = useLang();
-  const progressKey = `roadmap-progress-${slug}`;
-  const checksKey = `roadmap-checks-${slug}`;
+  const {
+    setStepCompleted,
+    setCheck,
+    isStepCompleted,
+    isCheckChecked,
+  } = useProgress(slug);
 
   const [open, setOpen] = useState(defaultOpen);
-  const [completed, setCompleted] = useState(false);
-  const [checks, setChecks] = useState<string[]>([]);
-
-  useEffect(() => {
-    const sync = () => {
-      setCompleted(readList(progressKey).map(Number).includes(index));
-      setChecks(readList(checksKey));
-    };
-    sync();
-    window.addEventListener("roadmap-progress-update", sync);
-    return () => window.removeEventListener("roadmap-progress-update", sync);
-  }, [progressKey, checksKey, index]);
+  const completed = isStepCompleted(index);
 
   const toggleComplete = () => {
-    const list = readList(progressKey).map(Number);
-    const next = list.includes(index)
-      ? list.filter((i) => i !== index)
-      : [...list, index];
-    localStorage.setItem(progressKey, JSON.stringify(next));
-    window.dispatchEvent(new Event("roadmap-progress-update"));
+    setStepCompleted(index, !completed);
   };
 
   const toggleCheck = (id: string) => {
-    const list = readList(checksKey);
-    const next = list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
-    localStorage.setItem(checksKey, JSON.stringify(next));
-    window.dispatchEvent(new Event("roadmap-progress-update"));
+    setCheck(id, !isCheckChecked(id));
   };
 
   const readiness = [step.learning_outcome, ...step.projects];
@@ -78,13 +52,12 @@ export default function RoadmapStep({
 
   return (
     <div id={`roadmap-step-${index}`} className="relative flex gap-4 scroll-mt-28 sm:gap-6">
-      {/* Timeline */}
       <div className="flex flex-col items-center">
         <button
           type="button"
           onClick={toggleComplete}
           aria-label={t("mark")}
-          className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border text-sm font-bold transition duration-300 ${
+          className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border text-sm font-bold transition duration-300 cursor-pointer ${
             completed
               ? "border-emerald-400/60 bg-emerald-400/20 text-emerald-200 shadow-[0_0_24px_rgba(52,211,153,0.35)]"
               : "border-violet-500/30 bg-[#0c0a18] text-violet-200 hover:border-violet-400/70"
@@ -97,7 +70,6 @@ export default function RoadmapStep({
         )}
       </div>
 
-      {/* Card */}
       <article
         className={`glass mb-6 min-w-0 flex-1 rounded-2xl transition duration-300 ${
           completed ? "border-emerald-400/20" : ""
@@ -206,7 +178,7 @@ export default function RoadmapStep({
               <ul className="space-y-2">
                 {readiness.map((text, j) => {
                   const id = `${index}-${j}`;
-                  const checked = checks.includes(id);
+                  const checked = isCheckChecked(id);
                   return (
                     <li key={id}>
                       <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-white/[0.05] bg-white/[0.015] p-3 text-sm leading-6 text-zinc-300 transition hover:bg-white/[0.04]">
@@ -230,7 +202,7 @@ export default function RoadmapStep({
             <button
               type="button"
               onClick={toggleComplete}
-              className={`w-full rounded-xl px-5 py-3 text-sm font-semibold transition ${
+              className={`w-full rounded-xl px-5 py-3 text-sm font-semibold transition cursor-pointer ${
                 completed
                   ? "border border-emerald-400/30 bg-emerald-400/10 text-emerald-200"
                   : "bg-gradient-to-r from-violet-500 to-indigo-500 text-white shadow-[0_8px_30px_rgba(124,58,237,0.3)] hover:-translate-y-0.5"
